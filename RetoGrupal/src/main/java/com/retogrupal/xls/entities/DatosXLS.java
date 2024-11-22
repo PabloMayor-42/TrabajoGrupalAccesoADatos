@@ -4,23 +4,23 @@ import java.util.ArrayList;
 
 public class DatosXLS {
 	private String[] encabezado;
-	private ArrayList<String[]> filas;
+	private ArrayList<Object[]> cuerpo;
 	public String[] getEncabezado() {
 		return encabezado;
 	}
 	public void setEncabezado(String[] encabezado) {
 		this.encabezado = encabezado;
 	}
-	public ArrayList<String[]> getFilas() {
-		return filas;
+	public ArrayList<Object[]> getCuerpo() {
+		return cuerpo;
 	}
-	public void setFilas(ArrayList<String[]> filas) {
-		this.filas = filas;
+	public void setCuerpo(ArrayList<Object[]> cuerpo) {
+		this.cuerpo = cuerpo;
 	}
-	public DatosXLS(String[] encabezado, ArrayList<String[]> filas) {
+	public DatosXLS(String[] encabezado, ArrayList<Object[]> cuerpo) {
 		super();
 		this.encabezado = encabezado;
-		this.filas = filas;
+		this.cuerpo = cuerpo;
 	}
 	public DatosXLS() {
 

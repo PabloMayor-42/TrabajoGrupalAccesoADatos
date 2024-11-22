@@ -9,12 +9,12 @@
 </head>
 <body>
 <body>
-<% DatosXLS datosXLS = (DatosXLS) application.getAttribute("fichero"); %>
+<% DatosXLS datosXLS = (DatosXLS) application.getAttribute("fichero-xls-contenido"); %>
 	<table border="1">
 		<tr><%for(String encab : datosXLS.getEncabezado()) { %> <td><%=encab %> </td> <%} %></tr>
-		<% for(String[] celdas : datosXLS.getFilas()) { %>
+		<% for(Object[] celdas : datosXLS.getCuerpo()) { %>
 			<tr>
-				<% for(String celda : celdas) {%>
+				<% for(Object celda : celdas) {%>
 					<td><%=celda %></td>
 				<%} %>
 			</tr>
