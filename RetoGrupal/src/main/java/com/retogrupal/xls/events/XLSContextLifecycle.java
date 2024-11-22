@@ -24,7 +24,7 @@ public class XLSContextLifecycle implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent sce)  { 
-    	sce.getServletContext().setAttribute("fichero", ManejoXLS.leer("fichero.xlsx"));
+    	sce.getServletContext().setAttribute("fichero", ManejoXLS.leer(sce.getServletContext().getRealPath("fichero.xls")));
     }
 
 	/**
