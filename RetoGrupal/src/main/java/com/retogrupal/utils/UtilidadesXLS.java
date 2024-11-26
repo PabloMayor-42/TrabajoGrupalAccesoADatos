@@ -17,6 +17,13 @@ import org.apache.poi.ss.usermodel.Sheet;
 import com.retogrupal.xls.entities.DatosXLS;
 
 public class UtilidadesXLS {
+	/**
+	 * Realiza la lectura del fichero indicado y devuelve un POJO de DatosXLS con
+	 * los datos leidos
+	 * 
+	 * @param archivo Ruta del archivo a leer
+	 * @return POJO de datos leidos
+	 */
 	public static DatosXLS leer(String archivo) {
 		DatosXLS datosXLS = null;
 
@@ -44,7 +51,7 @@ public class UtilidadesXLS {
 					// Cada celda puede tener un tipo de dato (se contempla la posibilidad de
 					// numericos)
 					if (celda.getCellType() == CellType.NUMERIC) {
-						objetivo.add((Double)celda.getNumericCellValue());
+						objetivo.add((Double) celda.getNumericCellValue());
 					} else {
 						objetivo.add(celda.getStringCellValue());
 					}
@@ -58,55 +65,60 @@ public class UtilidadesXLS {
 			// Crear POJO datos con cabecera y filas
 			datosXLS = new DatosXLS(encabezado.toArray(new String[0]), cuerpo);
 		} catch (IOException e) {
-			e.printStackTrace();
+
 		}
 
 		return datosXLS;
 	}
 
+	/**
+	 * Realiza la escritura del fichero indicado y devuelve el estado de la
+	 * escritura
+	 * 
+	 * @param archivo Ruta del archivo a escribir
+	 * @return Estado de la operacion (true si se ha realizado y false si ha habido
+	 *         algun error)
+	 */
 	public static boolean escribir(String archivo, ArrayList<Object> datosFila) {
-		//Cargar datos del xsl
+		// Cargar datos del xsl
 		File excel = new File(archivo);
-		
-		//Lanzar error si el fichero no existe
+
+		// Lanzar error si el fichero no existe
 		boolean operacionRealizada = excel.exists();
 
 		if (!operacionRealizada)
 			return false;
 
-		//Leer de nuevo los datos (puede que el contexto este desactualizado)
+		// Leer de nuevo los datos (puede que el contexto este desactualizado)
 		DatosXLS datosXLS = leer(archivo);
-		
+
 		try (HSSFWorkbook wk = new HSSFWorkbook(new FileInputStream(excel))) {
 			// Cargar hoja principal del excel
 			Sheet hojaPrincipal = wk.getSheetAt(0);
-			
-			//Crear nueva fila
-			Row fila = hojaPrincipal.createRow(hojaPrincipal.getLastRowNum()+1);
-			
-			//Realizar append de celdas en una nueva fila (solo admite numeros y texto)
+
+			// Crear nueva fila
+			Row fila = hojaPrincipal.createRow(hojaPrincipal.getLastRowNum() + 1);
+
+			// Realizar append de celdas en una nueva fila (solo admite numeros y texto)
 			for (int i = 0; i < datosFila.size(); i++) {
 				Cell celda = fila.createCell(i,
 						datosFila.get(i) instanceof Double ? CellType.NUMERIC : CellType.STRING);
 
-				//Establecer el valor de celda y tiparlo (solo se tipan numeros y strings)
+				// Establecer el valor de celda y tiparlo (solo se tipan numeros y strings)
 				if (datosFila.get(i) instanceof Double)
 					celda.setCellValue((Double) datosFila.get(i));
 				else
 					celda.setCellValue((String) datosFila.get(i));
 			}
-			
-			//Agregar los cambios al xls (reescribir el workbook)
+
+			// Agregar los cambios al xls (reescribir el workbook)
 			wk.write(excel);
 			
-			wk.close();
-
 		} catch (IOException e) {
-			//Error en la operacion
-			e.printStackTrace();
+			// Error en la operacion
 			operacionRealizada = false;
 		}
-		
+
 		return operacionRealizada;
 	}
 }

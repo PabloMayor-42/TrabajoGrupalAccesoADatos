@@ -3,8 +3,12 @@ package com.retogrupal.xls.entities;
 import java.util.ArrayList;
 
 public class DatosXLS {
+	//Cebecera con el nombre de las columnas de la tabla
 	private String[] encabezado;
+	
+	//Contenido del cuerpo del documento (por filas)
 	private ArrayList<Object[]> cuerpo;
+	
 	public String[] getEncabezado() {
 		return encabezado;
 	}
