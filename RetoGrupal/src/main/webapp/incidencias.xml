@@ -1,0 +1,1629 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<incidencias>
+    <titulo>Vialidad Incidencias JCyL</titulo>
+    <fecha>26/11/2024 11:19:33</fecha>
+    <incidencia>
+        <Provincia>Ávila</Provincia>
+        <Via>AV-501</Via>
+        <PKInicio>16.28</PKInicio>
+        <PKFin>26.0</PKFin>
+        <Tramo>DE AV-500A N-110</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/10/08 09:40:05</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216994</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Ávila</Provincia>
+        <Via>AV-900</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>26.6</PKFin>
+        <Tramo>DE ÁVILA (N-403)A NAVALMORAL DE LA SIERRA (AV-905)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/09/25 07:51:25</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216855</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Ávila</Provincia>
+        <Via>AV-941</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>16.5</PKFin>
+        <Tramo>DE VENTA DE LA RASQUILLA (N-502) A AV-932</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/07/22 12:17:48</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216171</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>A-231</Via>
+        <PKInicio>127.6</PKInicio>
+        <PKFin>129.6</PKFin>
+        <Tramo>DE MELGAR DE FERNAMENTAL A VILLANUEVA DE ARGAÑO </Tramo>
+        <Tipo>Cortada</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Izquierda</Calzada>
+        <Observaciones>Corte de carril derecho en calzada izquierda</Observaciones>
+        <FechaAlta>2024/11/26 09:36:09</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217624</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>CL-117</Via>
+        <PKInicio>1.0</PKInicio>
+        <PKFin>3.0</PKFin>
+        <Tramo>DE SALAS DE LOS INFANTES A QUINTANAR DE LA SIERRA (BU-822)</Tramo>
+        <Tipo>Circulación alternativa</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/26 07:49:38</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217614</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>CL-620</Via>
+        <PKInicio>0.6</PKInicio>
+        <PKFin>0.7</PKFin>
+        <Tramo>DE LÍMITE DE C.A. DEL PAÍS VASCO A LÍMITE DE C.A. DEL PAÍS VASCO</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/08/08 11:59:51</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216425</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-134</Via>
+        <PKInicio>0.1</PKInicio>
+        <PKFin>0.3</PKFin>
+        <Tramo>DE ROA DE DUERO (BU-130) A MAMBRILLA DE CASTREJÓN (BU-131)</Tramo>
+        <Tipo>Cortada</Tipo>
+        <Causa>Desprendimientos</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obstáculos/objetos en la calzada</Observaciones>
+        <FechaAlta>2024/08/07 08:56:57</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216397</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-530</Via>
+        <PKInicio>11.2</PKInicio>
+        <PKFin>11.8</PKFin>
+        <Tramo>DE BU-504 A BU-532</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/14 13:57:24</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215229</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-530</Via>
+        <PKInicio>23.4</PKInicio>
+        <PKFin>23.4</PKFin>
+        <Tramo>DE BU-532 A LÍMITE DE C.A. DEL PAÍS VASCO</Tramo>
+        <Tipo>Cortada</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/26 08:54:15</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217622</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-532</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>13.6</PKFin>
+        <Tramo>DE PEDROSA DE TOBALINA (BU-550) A BARCINA DEL BARCO (BU-530)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras de señalización horizontal</Observaciones>
+        <FechaAlta>2024/11/18 13:24:32</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217514</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-550</Via>
+        <PKInicio>43.6</PKInicio>
+        <PKFin>43.7</PKFin>
+        <Tramo>DE BU-552 A LÍMITE DE C.A. DEL PAÍS VASCO</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Desprendimientos</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/25 09:23:17</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217602</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-550</Via>
+        <PKInicio>43.6</PKInicio>
+        <PKFin>43.7</PKFin>
+        <Tramo>DE BU-552 A LÍMITE DE C.A. DEL PAÍS VASCO</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/06 12:08:23</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217321</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-551</Via>
+        <PKInicio>12.0</PKInicio>
+        <PKFin>16.6</PKFin>
+        <Tramo>DE LA CERCA A MEDINA DE POMAR (N-629)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/09/20 10:55:13</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216808</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-622</Via>
+        <PKInicio>23.0</PKInicio>
+        <PKFin>24.0</PKFin>
+        <Tramo>DE SANTIBÁÑEZ ZARZAGUDA A N-627</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/10/21 12:52:26</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217152</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-735</Via>
+        <PKInicio>3.0</PKInicio>
+        <PKFin>4.0</PKFin>
+        <Tramo>DE MIRANDA DE EBRO (BU-733) A IRCIO</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/08/16 15:00:51</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216479</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-800</Via>
+        <PKInicio>1.0</PKInicio>
+        <PKFin>12.8</PKFin>
+        <Tramo>DE ACCESO A CARTUJA DE MIRAFLORES (BURGOS) A CARDEÑADIJO</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/15 07:26:31</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217484</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-800</Via>
+        <PKInicio>12.8</PKInicio>
+        <PKFin>13.0</PKFin>
+        <Tramo>DE CARDEÑADIJO A BURGOS (N-I, ROTONDA DE SAN AGUSTÍN)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/15 07:26:31</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217485</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-921</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>7.9</PKFin>
+        <Tramo>DE BU-910 A HUERTA DEL REY (BU-925)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/03/01 15:21:20</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=212157</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Burgos</Provincia>
+        <Via>BU-921</Via>
+        <PKInicio>8.2</PKInicio>
+        <PKFin>11.6</PKFin>
+        <Tramo>DE BU-910 A HUERTA DEL REY (BU-925)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/22 08:35:13</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217574</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>León</Provincia>
+        <Via>A-631</Via>
+        <PKInicio>3.5</PKInicio>
+        <PKFin>3.5</PKFin>
+        <Tramo>DE PONFERRADA (N-VI) A INICIO DE AUTOVÍA (CUBILLOS DEL SIL)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/07/29 14:31:36</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216279</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>León</Provincia>
+        <Via>CL-622</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>1.0</PKFin>
+        <Tramo>DE N-630 (RIBASECA) A LE-420</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/10/30 11:26:35</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217263</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>León</Provincia>
+        <Via>CL-623</Via>
+        <PKInicio>2.0</PKInicio>
+        <PKFin>7.56</PKFin>
+        <Tramo>DE SAN ANDRÉS DEL RABANEDO A LA MAGDALENA (CL-626)</Tramo>
+        <Tipo>Circulación alternativa</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/21 07:14:37</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217552</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>León</Provincia>
+        <Via>CL-626</Via>
+        <PKInicio>95.5</PKInicio>
+        <PKFin>107.3</PKFin>
+        <Tramo>DE LA ROBLA (N-630) A LA VECILLA (LE-321)</Tramo>
+        <Tipo>Circulación alternativa</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Pavimentación</Observaciones>
+        <FechaAlta>2024/10/22 10:31:19</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217174</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>León</Provincia>
+        <Via>CL-626</Via>
+        <PKInicio>123.25</PKInicio>
+        <PKFin>123.3</PKFin>
+        <Tramo>DE LA VECILLA (LE-321) A CL-624 (BOÑAR)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/13 08:52:49</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217402</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>León</Provincia>
+        <Via>CL-631</Via>
+        <PKInicio>33.3</PKInicio>
+        <PKFin>33.3</PKFin>
+        <Tramo>DE A-631 (TORENO) A LE-711 (PÁRAMO DE SIL)</Tramo>
+        <Tipo>Circulación alternativa</Tipo>
+        <Causa>Desprendimientos</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/07/18 10:28:16</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216130</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>León</Provincia>
+        <Via>LE-164</Via>
+        <PKInicio>0.5</PKInicio>
+        <PKFin>42.9</PKFin>
+        <Tramo>DE PUENTE DE DOMINGO FLÓREZ (N-536) A LA BAÑA (LE-126)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Desprendimientos</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obstáculos/objetos en la calzada</Observaciones>
+        <FechaAlta>2022/12/07 14:39:17</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=197432</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>León</Provincia>
+        <Via>LE-333</Via>
+        <PKInicio>2.8</PKInicio>
+        <PKFin>14.4</PKFin>
+        <Tramo>DE PUEBLA DE LILLO (LE-331) A LÍMITE DE C.A. DE ASTURIAS (PTO DE TARNA)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/09/17 08:27:32</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216740</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>León</Provincia>
+        <Via>LE-497</Via>
+        <PKInicio>2.55</PKInicio>
+        <PKFin>2.95</PKFin>
+        <Tramo>DE CABOALLES DE ABAJO (CL-626) A LÍMITE DE C.A. DE ASTURIAS </Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/03/15 12:52:19</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=214052</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>León</Provincia>
+        <Via>LE-524</Via>
+        <PKInicio>2.5</PKInicio>
+        <PKFin>3.2</PKFin>
+        <Tramo>DE VILLAQUEJIDA (N-630) A LÍMITE DE PROVINCIA DE ZAMORA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2021/10/28 08:43:37</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=186180</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>A-231</Via>
+        <PKInicio>81.0</PKInicio>
+        <PKFin>82.0</PKFin>
+        <Tramo>DE P-235 A CARRIÓN DE LOS CONDES (CL-615) </Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Accidente</Causa>
+        <Calzada>Derecha</Calzada>
+        <Observaciones>Corte de carril derecho en calzada derecha</Observaciones>
+        <FechaAlta>2024/11/25 20:02:26</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217612</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>A-610</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>2.0</PKFin>
+        <Tramo>DE PALENCIA A MAGAZ (N-620)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Derecha</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/25 21:32:23</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217613</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>CL-612</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>0.17</PKFin>
+        <Tramo>DE VILLAMARTÍN DE CAMPOS (N-610) A TORREMORMOJÓN (P-921)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/09/17 08:07:27</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216732</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>CL-613</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>1.87</PKFin>
+        <Tramo>DE PALENCIA (CL-615) A GRIJOTA (P-954)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/09/20 12:08:43</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216815</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>CL-613</Via>
+        <PKInicio>1.87</PKInicio>
+        <PKFin>13.0</PKFin>
+        <Tramo>DE GRIJOTA (P-954) A PAREDES DE NAVA </Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/09/20 12:07:56</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216814</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>CL-615</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>1.3</PKFin>
+        <Tramo>DE PALENCIA A VILLALDAVÍN (P-960)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/31 09:14:45</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215467</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>CL-619</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>6.5</PKFin>
+        <Tramo>DE MAGAZ DE PISUERGA (N-620) A BALTANÁS (P-131)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:26:06</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215180</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>CL-619</Via>
+        <PKInicio>15.14</PKInicio>
+        <PKFin>21.0</PKFin>
+        <Tramo>DE BALTANÁS (P-131) A CEVICO NAVERO (P-114)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:27:08</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215184</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>CL-627</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>8.556</PKFin>
+        <Tramo>DE CERVERA DE PISUERGA (CL-626) A SAN SALVADOR DE CANTAMUDA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/06/25 11:37:39</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215823</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>CL-627</Via>
+        <PKInicio>8.557</PKInicio>
+        <PKFin>8.735</PKFin>
+        <Tramo>DE CERVERA DE PISUERGA (CL-626) A SAN SALVADOR DE CANTAMUDA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/06/25 11:36:15</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215822</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>CL-627</Via>
+        <PKInicio>8.736</PKInicio>
+        <PKFin>14.75</PKFin>
+        <Tramo>DE CERVERA DE PISUERGA (CL-626) A SAN SALVADOR DE CANTAMUDA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/06/25 11:38:37</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215824</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>CL-627</Via>
+        <PKInicio>14.75</PKInicio>
+        <PKFin>29.67</PKFin>
+        <Tramo>DE SAN SALVADOR DE CANTAMUDA A LÍMITE DE C.A. DE CANTABRIA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/13 11:51:55</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217411</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-102</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>1.8</PKFin>
+        <Tramo>DE DUEÑAS (N-620) A LÍMITE DE PROVINCIA DE VALLADOLID</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:23:10</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215176</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-110</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>10.1</PKFin>
+        <Tramo>DE P-102 A CEVICO DE LA TORRE (P-131)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:24:23</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215177</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-121</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>3.2</PKFin>
+        <Tramo>DE N-620 A VALLE DE CERRATO (P-131)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:22:13</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215175</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-121</Via>
+        <PKInicio>3.2</PKInicio>
+        <PKFin>6.2</PKFin>
+        <Tramo>DE N-620 A VALLE DE CERRATO (P-131)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/06/06 07:58:04</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215547</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-130</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>10.7</PKFin>
+        <Tramo>DE BALTANÁS (P-131) A TORQUEMADA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:40:23</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215190</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-131</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>6.275</PKFin>
+        <Tramo>DE CEVICO DE LA TORRE (P-110) A VALLE DE CERRATO (P-121)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:30:21</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215185</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-131</Via>
+        <PKInicio>5.4</PKInicio>
+        <PKFin>5.8</PKFin>
+        <Tramo>DE CEVICO DE LA TORRE (P-110) A VALLE DE CERRATO (P-121)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/08/09 10:38:43</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216445</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-131</Via>
+        <PKInicio>6.275</PKInicio>
+        <PKFin>18.18</PKFin>
+        <Tramo>DE VALLE DE CERRATO (P-121) A BALTANÁS (CL-619)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:30:49</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215186</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-131</Via>
+        <PKInicio>16.0</PKInicio>
+        <PKFin>17.5</PKFin>
+        <Tramo>DE VALLE DE CERRATO (P-121) A BALTANÁS (CL-619)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/06/06 13:46:56</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215563</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-131</Via>
+        <PKInicio>18.182</PKInicio>
+        <PKFin>34.625</PKFin>
+        <Tramo>DE BALTANÁS (CL-619) A PALENZUELA (N-622)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2021/07/28 12:30:44</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=185369</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-141</Via>
+        <PKInicio>26.075</PKInicio>
+        <PKFin>26.155</PKFin>
+        <Tramo>DE ANTIGÜEDAD A ESPINOSA DE CERRATO</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/07/30 13:44:24</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216296</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-220</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>2.3</PKFin>
+        <Tramo>DE AGUILAR DE CAMPOO (N-611a) A BRAÑOSERA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:38:19</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215188</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-227</Via>
+        <PKInicio>7.9</PKInicio>
+        <PKFin>8.05</PKFin>
+        <Tramo>DE CL-626 A OLMOS DE OJEDA (P-222)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Desprendimientos</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2023/10/20 13:59:41</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=206533</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-227</Via>
+        <PKInicio>20.85</PKInicio>
+        <PKFin>20.95</PKFin>
+        <Tramo>DE OLMOS DE OJEDA (P-222) A LA VID DE OJEDA (P-223)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/04/17 13:12:26</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=214951</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-227</Via>
+        <PKInicio>31.8</PKInicio>
+        <PKFin>34.44</PKFin>
+        <Tramo>DE LA VID DE OJEDA (P-223) A HERRERA DE PISUERGA </Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:39:22</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215189</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-230</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>0.7</PKFin>
+        <Tramo>DE HERRERA DE PISUERGA (P-227) A SOTOBAÑADO (P-233)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:47:23</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215195</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-231</Via>
+        <PKInicio>14.5</PKInicio>
+        <PKFin>18.2</PKFin>
+        <Tramo>DE CALAHORRA DE BOEDO (P-232) A HERRERA DE PISUERGA (P-230)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:43:15</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215192</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-231</Via>
+        <PKInicio>18.2</PKInicio>
+        <PKFin>18.35</PKFin>
+        <Tramo>DE CALAHORRA DE BOEDO (P-232) A HERRERA DE PISUERGA (P-230)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:44:24</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215193</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-231</Via>
+        <PKInicio>18.35</PKInicio>
+        <PKFin>18.62</PKFin>
+        <Tramo>DE CALAHORRA DE BOEDO (P-232) A HERRERA DE PISUERGA (P-230)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/06/04 09:15:57</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215507</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-232</Via>
+        <PKInicio>8.75</PKInicio>
+        <PKFin>9.475</PKFin>
+        <Tramo>DE N-611 A CALAHORRA DE BOEDO (P-232)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/08/12 13:10:56</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216457</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-245</Via>
+        <PKInicio>0.695</PKInicio>
+        <PKFin>4.8</PKFin>
+        <Tramo>DE OSORNO (N-120) A VILLASARRACINO (P-236)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/08/09 13:09:31</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216449</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-410</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>5.5</PKFin>
+        <Tramo>DE VILLALOBÓN (P-405) A VALDEOLMILLOS (P-411)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/09/20 11:10:30</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216809</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-412</Via>
+        <PKInicio>0.8</PKInicio>
+        <PKFin>1.0</PKFin>
+        <Tramo>DE A-62 (TORQUEMADA) A CORDOVILLA LA REAL (P-413)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/04/05 12:02:33</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=214782</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-420</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>0.85</PKFin>
+        <Tramo>DE AMUSCO (N-611) A VALDESPINA (P-430)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/05/29 18:31:31</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215445</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-420</Via>
+        <PKInicio>0.85</PKInicio>
+        <PKFin>5.53</PKFin>
+        <Tramo>DE AMUSCO (N-611) A VALDESPINA (P-430)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/20 12:22:58</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215311</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-430</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>2.5</PKFin>
+        <Tramo>DE FRÓMISTA (P-431) A VALDESPINA (P-420)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2023/12/21 10:53:07</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=207703</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-430</Via>
+        <PKInicio>2.5</PKInicio>
+        <PKFin>4.33</PKFin>
+        <Tramo>DE FRÓMISTA (P-431) A VALDESPINA (P-420)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2023/05/30 10:04:42</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=205046</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-430</Via>
+        <PKInicio>6.55</PKInicio>
+        <PKFin>14.38</PKFin>
+        <Tramo>DE FRÓMISTA (P-431) A VALDESPINA (P-420)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/05/10 09:49:34</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215197</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-431</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>1.8</PKFin>
+        <Tramo>DE FRÓMISTA (N-611a) A P-403</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/06/04 09:21:20</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215508</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-431</Via>
+        <PKInicio>1.8</PKInicio>
+        <PKFin>3.2</PKFin>
+        <Tramo>DE FRÓMISTA (N-611a) A P-403</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/04/15 07:46:48</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=214889</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-434</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>1.65</PKFin>
+        <Tramo>DE FRÓMISTA (P-431) A LÍMITE DE PROVINCIA DE BURGOS</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2023/07/27 13:39:35</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=205754</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-434</Via>
+        <PKInicio>1.65</PKInicio>
+        <PKFin>3.4</PKFin>
+        <Tramo>DE FRÓMISTA (P-431) A LÍMITE DE PROVINCIA DE BURGOS</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2023/05/30 10:05:15</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=205047</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-904</Via>
+        <PKInicio>1.1</PKInicio>
+        <PKFin>1.7</PKFin>
+        <Tramo>DE AMPUDIA (P-901) A LÍMITE DE PROVINCIA DE VALLADOLID</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/09/17 14:00:20</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216751</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-953</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>6.95</PKFin>
+        <Tramo>DE LA VENTA (CL-615) A BECERRIL DE CAMPOS (CL-613)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/09/20 12:10:24</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216816</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-953</Via>
+        <PKInicio>6.95</PKInicio>
+        <PKFin>8.0</PKFin>
+        <Tramo>DE BECERRIL DE CAMPOS (CL-613) A FUENTES DE NAVA (P-940)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/09/20 13:40:58</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216820</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-981</Via>
+        <PKInicio>0.6</PKInicio>
+        <PKFin>9.56</PKFin>
+        <Tramo>DE VILLOLDO (CL-615a) A VILLALCÁZAR DE SIRGA (P-980)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2023/10/17 11:39:12</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=206503</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-981</Via>
+        <PKInicio>22.625</PKInicio>
+        <PKFin>23.389</PKFin>
+        <Tramo>DE VILLALCÁZAR DE SIRGA (P-980) A A-67 (SANTILLANA DE CAMPOS)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2023/05/30 10:07:53</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=205048</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Palencia</Provincia>
+        <Via>P-984</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>6.0</PKFin>
+        <Tramo>DE N-611 A SAN CEBRIÁN DE CAMPOS (P-983)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/09/30 07:59:05</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216904</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Salamanca</Provincia>
+        <Via>CL-510</Via>
+        <PKInicio>3.6</PKInicio>
+        <PKFin>4.5</PKFin>
+        <Tramo>DE A-62 (SALAMANCA) A CALVARRASA DE ARRIBA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/26 08:33:04</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217618</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Salamanca</Provincia>
+        <Via>CL-510</Via>
+        <PKInicio>22.9</PKInicio>
+        <PKFin>24.0</PKFin>
+        <Tramo>DE ALBA DE TORMES A ANAYA DE ALBA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/26 08:33:54</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217619</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Salamanca</Provincia>
+        <Via>CL-512</Via>
+        <PKInicio>23.7</PKInicio>
+        <PKFin>26.88</PKFin>
+        <Tramo>DE ALDEATEJADA A VECINOS (SA-211)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/26 08:35:38</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217621</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Salamanca</Provincia>
+        <Via>CL-517</Via>
+        <PKInicio>100.7</PKInicio>
+        <PKFin>103.0</PKFin>
+        <Tramo>DE LUMBRALES A LÍMITE CON PORTUGAL </Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/26 08:34:55</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217620</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Salamanca</Provincia>
+        <Via>SA-100</Via>
+        <PKInicio>3.8</PKInicio>
+        <PKFin>4.4</PKFin>
+        <Tramo>DE N-630 A LÍMITE DE PROVINCIA DE ÁVILA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/10/29 08:33:10</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217241</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Salamanca</Provincia>
+        <Via>SA-104</Via>
+        <PKInicio>6.5</PKInicio>
+        <PKFin>7.0</PKFin>
+        <Tramo>DE GUIJUELO A LÍMITE DE PROVINCIA DE ÁVILA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/13 14:06:18</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217418</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Salamanca</Provincia>
+        <Via>SA-203</Via>
+        <PKInicio>7.0</PKInicio>
+        <PKFin>8.0</PKFin>
+        <Tramo>DE SA-201 A EL PASO DE LOS LOBOS </Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/08/19 13:55:32</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216488</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Salamanca</Provincia>
+        <Via>SA-225</Via>
+        <PKInicio>14.8</PKInicio>
+        <PKFin>15.0</PKFin>
+        <Tramo>DE SA-220 A LÍMITE DE C.A. DE EXTREMADURA</Tramo>
+        <Tipo>Circulación alternativa</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/26 08:07:41</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217616</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Salamanca</Provincia>
+        <Via>SA-300</Via>
+        <PKInicio>8.7</PKInicio>
+        <PKFin>10.5</PKFin>
+        <Tramo>DE VILLAMAYOR A LEDESMA (SA-305)</Tramo>
+        <Tipo>Circulación alternativa</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/26 08:06:08</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217615</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Salamanca</Provincia>
+        <Via>SA-305</Via>
+        <PKInicio>39.0</PKInicio>
+        <PKFin>41.0</PKFin>
+        <Tramo>DE CL-517 A LEDESMA (SA-300)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/19 13:42:43</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217533</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Salamanca</Provincia>
+        <Via>SA-810</Via>
+        <PKInicio>17.0</PKInicio>
+        <PKFin>17.7</PKFin>
+        <Tramo>DE ENCINAS DE ABAJO (N-501) A SA-801</Tramo>
+        <Tipo>Circulación alternativa</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Pavimentación</Observaciones>
+        <FechaAlta>2024/11/26 08:12:02</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217617</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Segovia</Provincia>
+        <Via>CL-605</Via>
+        <PKInicio>26.67</PKInicio>
+        <PKFin>27.035</PKFin>
+        <Tramo>DE GARCILLÁN (SG-313) A SANTA MARÍA LA REAL DE NIEVA (SG-342)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/19 18:10:24</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217534</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Segovia</Provincia>
+        <Via>SG-322</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>11.7</PKFin>
+        <Tramo>DE N-110 A MUÑOPEDRO</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/10/30 18:18:55</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217266</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Segovia</Provincia>
+        <Via>SG-322</Via>
+        <PKInicio>20.0</PKInicio>
+        <PKFin>20.15</PKFin>
+        <Tramo>DE N-110 A MUÑOPEDRO</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/05 08:57:10</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217302</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Segovia</Provincia>
+        <Via>SG-342</Via>
+        <PKInicio>31.0</PKInicio>
+        <PKFin>32.0</PKFin>
+        <Tramo>DE NAVAS DE ORO (SG-332) A NAVA DE LA ASUNCIÓN (SG-343)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/18 19:23:39</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217517</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Segovia</Provincia>
+        <Via>SG-722</Via>
+        <PKInicio>5.7</PKInicio>
+        <PKFin>5.9</PKFin>
+        <Tramo>DE N-110 A SG-723</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/19 18:12:18</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217535</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Segovia</Provincia>
+        <Via>SG-945</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>0.3</PKFin>
+        <Tramo>DE AYLLÓN (N-110) A MADERUELO</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/25 10:52:16</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217607</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Soria</Provincia>
+        <Via>SO-630</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>11.24</PKFin>
+        <Tramo>DE SO-615 A SAN PEDRO MANRIQUE (SO-650)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/10/22 13:59:36</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217180</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Soria</Provincia>
+        <Via>SO-630</Via>
+        <PKInicio>11.24</PKInicio>
+        <PKFin>24.5</PKFin>
+        <Tramo>DE SAN PEDRO MANRIQUE (SO-650) A CASTILRUIZ</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/10/22 13:58:21</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217179</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Valladolid</Provincia>
+        <Via>A-601</Via>
+        <PKInicio>4.42</PKInicio>
+        <PKFin>12.7</PKFin>
+        <Tramo>DE VALLADOLID (VA-30) A CL-600</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Pavimentación</Observaciones>
+        <FechaAlta>2024/10/11 15:13:19</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217082</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>CL-605</Via>
+        <PKInicio>132.0</PKInicio>
+        <PKFin>134.0</PKFin>
+        <Tramo>DE FUENTESAÚCO A EL PIÑERO (ZA-611)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/06 10:54:18</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217316</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-305</Via>
+        <PKInicio>6.5</PKInicio>
+        <PKFin>7.8</PKFin>
+        <Tramo>DE N-630 A SAN MARCIAL</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/21 08:36:26</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217557</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-306</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>1.5</PKFin>
+        <Tramo>DE PUEBLICA DE CAMPEÁN (ZA-320) A ZA-302</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Pavimentación</Observaciones>
+        <FechaAlta>2024/11/22 13:42:28</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217592</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-306</Via>
+        <PKInicio>17.5</PKInicio>
+        <PKFin>18.3</PKFin>
+        <Tramo>DE ZA-302 A LÍMITE DE PROVINCIA DE SALAMANCA</Tramo>
+        <Tipo>Circulación alternativa</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2023/08/17 13:34:39</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=205910</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-316</Via>
+        <PKInicio>0.1</PKInicio>
+        <PKFin>0.4</PKFin>
+        <Tramo>DE FERMOSELLE (CL-527) A LÍMITE DE PROVINCIA DE SALAMANCA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/10/17 11:11:06</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217117</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-324</Via>
+        <PKInicio>5.3</PKInicio>
+        <PKFin>5.35</PKFin>
+        <Tramo>DE RICOBAYO (N-122) A VILLALCAMPO (ZA-V-2211)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/22 13:12:15</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217588</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-330</Via>
+        <PKInicio>5.8</PKInicio>
+        <PKFin>9.086</PKFin>
+        <Tramo>DE GLORIETA POLIGONO LOS LLANOS (ZA-325) A PUEBLICA DE CAMPEÁN (ZA-306)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Pavimentación</Observaciones>
+        <FechaAlta>2024/11/22 13:40:28</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217591</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-512</Via>
+        <PKInicio>0.98</PKInicio>
+        <PKFin>2.98</PKFin>
+        <Tramo>DE VILLALPANDO (CL-612) A VILLANUEVA DEL CAMPO (N-610)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/25 08:27:36</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217598</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-604</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>9.6</PKFin>
+        <Tramo>DE LA BÓVEDA DE TORO (ZA-605) A FUENTELAPEÑA (ZA-602)</Tramo>
+        <Tipo>Cortada</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/07/03 08:03:16</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=215895</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-604</Via>
+        <PKInicio>9.68</PKInicio>
+        <PKFin>10.0</PKFin>
+        <Tramo>DE FUENTELAPEÑA (ZA-602) A CAÑIZAL (CL-605)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/04/17 13:03:52</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=214950</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-610</Via>
+        <PKInicio>19.5</PKInicio>
+        <PKFin>19.5</PKFin>
+        <Tramo>DE MORALEJA DEL VINO (ZA-623) A VENIALBO (ZA-611)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/10/22 12:00:41</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217177</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-610</Via>
+        <PKInicio>29.2</PKInicio>
+        <PKFin>29.7</PKFin>
+        <Tramo>DE VENIALBO (ZA-611) A LA BÓVEDA DE TORO (ZA-605)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/18 09:29:08</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217510</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-611</Via>
+        <PKInicio>35.0</PKInicio>
+        <PKFin>37.5</PKFin>
+        <Tramo>DE CL-605 (EL PIÑERO) A ZA-602</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Otras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/22 14:20:25</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217594</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-623</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>3.46</PKFin>
+        <Tramo>DE MORALEJA DEL VINO (ZA-610) A CASASECA DE LAS CHANAS</Tramo>
+        <Tipo>Cortada</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/08/20 08:02:04</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=216491</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-623</Via>
+        <PKInicio>0.0</PKInicio>
+        <PKFin>3.464</PKFin>
+        <Tramo>DE MORALEJA DEL VINO (ZA-610) A CASASECA DE LAS CHANAS</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2023/12/18 12:34:32</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=207422</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-713</Via>
+        <PKInicio>0.2</PKInicio>
+        <PKFin>0.3</PKFin>
+        <Tramo>DE TORO (N-122) A CASTRONUEVO (ZA-714)</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>--</Observaciones>
+        <FechaAlta>2024/11/15 10:30:15</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217494</MasInfo>
+    </incidencia>
+    <incidencia>
+        <Provincia>Zamora</Provincia>
+        <Via>ZA-925</Via>
+        <PKInicio>1.1</PKInicio>
+        <PKFin>1.25</PKFin>
+        <Tramo>DE PUEBLA DE SANABRIA (N-525) A PEDRALBA DE LA PRADERÍA</Tramo>
+        <Tipo>Precaución</Tipo>
+        <Causa>Obras</Causa>
+        <Calzada>Única</Calzada>
+        <Observaciones>Obras en la vía</Observaciones>
+        <FechaAlta>2024/11/26 11:05:57</FechaAlta>
+        <RutaAlt></RutaAlt>
+        <MasInfo>http://servicios.jcyl.es/InviPublica/index.html?numInci=217625</MasInfo>
+    </incidencia>
+</incidencias>
