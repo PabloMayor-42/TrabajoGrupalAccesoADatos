@@ -1,6 +1,6 @@
 package com.retogrupal.xls.events;
 
-import com.retogrupal.xls.ManejoXLS;
+import com.retogrupal.utils.UtilidadesXLS;
 
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
@@ -24,7 +24,7 @@ public class XLSContextLifecycle implements ServletContextListener {
      * @see ServletContextListener#contextInitialized(ServletContextEvent)
      */
     public void contextInitialized(ServletContextEvent sce)  { 
-    	sce.getServletContext().setAttribute("fichero-xls-contenido", ManejoXLS.leer(sce.getServletContext().getRealPath("fichero.xls")));
+    	sce.getServletContext().setAttribute("fichero-xls-contenido", UtilidadesXLS.leer(sce.getServletContext().getRealPath("fichero.xls")));
     	sce.getServletContext().setAttribute("fichero-xls", sce.getServletContext().getRealPath("fichero.xls"));
     }
 

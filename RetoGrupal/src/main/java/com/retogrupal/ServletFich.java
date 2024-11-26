@@ -1,4 +1,4 @@
-package com.retogrupal.xls;
+package com.retogrupal;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
+
+import com.retogrupal.utils.UtilidadesXLS;
 
 /**
  * Servlet implementation class ServletFich
@@ -57,8 +59,8 @@ public class ServletFich extends HttpServlet {
 			request.setAttribute("faltaParametroFlag", datoVacio);
 			
 			if (!datoVacio) {
-				if(ManejoXLS.escribir((String)getServletContext().getAttribute("fichero-xls"), datos)) {
-					getServletContext().setAttribute("fichero-xls-contenido", ManejoXLS.leer((String)getServletContext().getAttribute("fichero-xls")));
+				if(UtilidadesXLS.escribir((String)getServletContext().getAttribute("fichero-xls"), datos)) {
+					getServletContext().setAttribute("fichero-xls-contenido", UtilidadesXLS.leer((String)getServletContext().getAttribute("fichero-xls")));
 				}
 				else {
 					despachar = "Error.jsp";

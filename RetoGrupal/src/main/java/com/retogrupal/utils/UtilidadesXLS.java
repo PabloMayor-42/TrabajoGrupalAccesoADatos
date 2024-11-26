@@ -1,4 +1,4 @@
-package com.retogrupal.xls;
+package com.retogrupal.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,7 +16,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 
 import com.retogrupal.xls.entities.DatosXLS;
 
-public class ManejoXLS {
+public class UtilidadesXLS {
 	public static DatosXLS leer(String archivo) {
 		DatosXLS datosXLS = null;
 
