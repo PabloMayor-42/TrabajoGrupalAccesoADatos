@@ -29,7 +29,7 @@ public class UtilidadesXLS {
 			ArrayList<Object[]> cuerpo = new ArrayList<Object[]>();
 
 			// Recorrer contenido
-			for (int i = hojaPrincipal.getFirstRowNum(); i < hojaPrincipal.getLastRowNum(); i++) {
+			for (int i = hojaPrincipal.getFirstRowNum(); i <= hojaPrincipal.getLastRowNum(); i++) {
 				Iterator<Cell> celdas = hojaPrincipal.getRow(i).cellIterator();
 				ArrayList<Object> fila = new ArrayList<Object>();
 
@@ -97,9 +97,9 @@ public class UtilidadesXLS {
 			}
 			
 			//Agregar los cambios al xls (reescribir el workbook)
-			try (FileOutputStream fos = new FileOutputStream(excel)) {
-                wk.write(fos);
-            }
+			wk.write(excel);
+			
+			wk.close();
 
 		} catch (IOException e) {
 			//Error en la operacion

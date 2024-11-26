@@ -6,10 +6,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.http.HttpRequest;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 import com.retogrupal.utils.UtilidadesXLS;
+import com.retogrupal.xls.entities.DatosXLS;
 
 /**
  * Servlet implementation class ServletFich
@@ -33,51 +36,115 @@ public class ServletFich extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String despachar = null;
+
+		// Realizar operaciones en base a opcion seleccionada (lectura / escritura)
 		switch (request.getParameter("accion") == null ? "" : request.getParameter("accion")) {
 		case "lectura":
-			despachar = "AccesoDatosA.jsp";
+			// Tomar formato y cargar el contenido que se haya seleccionado en la request
+			if (request.getParameter("formato") != null) {
+				despachar = "AccesoDatosA.jsp";
+				cargaContenido(request);
+			} else {
+				// Formato nulo
+				despachar = "Error.JSP";
+				request.setAttribute("error", "No se ha seleccionado un formato");
+			}
 			break;
 		case "escritura":
-			boolean datoVacio = false;
-			Iterator<String> parametros = request.getParameterNames().asIterator();
-			ArrayList<Object> datos = new ArrayList<>();
-
-			while (parametros.hasNext() && !datoVacio) {
-				String parametro = parametros.next();
-				if (parametro.contains("dato-") && !request.getParameter(parametro).isBlank()) {
-					try {
-						datos.add(Double.parseDouble(request.getParameter(parametro)));
-					} catch (NumberFormatException ignore) {
-						datos.add(request.getParameter(parametro));
-					}
-
-				} else if (parametro.contains("dato-"))
-					datoVacio = true;
+			// Tomar formato y realizar escritura en su fichero correspondiente (cargado en
+			// contexto como fichero-<<formato>>)
+			if (request.getParameter("formato") != null)
+				despachar = realizarEscritura(request.getParameter("formato").toLowerCase(), request, response);
+			else {
+				// Formato nulo
+				despachar = "Error.jsp";
+				request.setAttribute("error", "No se ha seleccionado un formato");
 			}
-			
-			despachar = datoVacio ? "TratamientoFich.jsp" : "AccesoDatosA.jsp";
-			request.setAttribute("faltaParametroFlag", datoVacio);
-			
-			if (!datoVacio) {
-				if(UtilidadesXLS.escribir((String)getServletContext().getAttribute("fichero-xls"), datos)) {
-					getServletContext().setAttribute("fichero-xls-contenido", UtilidadesXLS.leer((String)getServletContext().getAttribute("fichero-xls")));
-				}
-				else {
-					despachar = "Error.jsp";
-					request.setAttribute("error", "Error al realizar la escritura");
-				}
-			}
-			
 			break;
-		case "":
+		default:
+			// Operacion no indicada
 			request.setAttribute("error", "No se ha seleccionado una opción valida (lectura/scritura)");
 			break;
 		}
 
+		// En el caso de que no haya despachado (error producido) despacha a Error
 		if (despachar == null)
 			despachar = "Error.jsp";
 
 		request.getRequestDispatcher(despachar).forward(request, response);
+	}
 
+	/**
+	 * Carga el contenido en los atributos de la request en base al formato
+	 * almacenado en los parametros de la request
+	 * 
+	 * @param request Solicitud entrante
+	 */
+	private void cargaContenido(HttpServletRequest request) {
+		request.setAttribute("contenido", getServletContext()
+				.getAttribute("fichero-" + request.getParameter("formato").toLowerCase() + "-contenido"));
+	}
+
+	/**
+	 * Realiza la escritura en el fichero relacionado al tipo de formato
+	 * 
+	 * @param formato  Nombre del formato escrito en minúsculas. Ejemplo: xls
+	 * @param request  Solicitud entrante
+	 * @param response Respuesta del servlet
+	 * @return
+	 */
+	private String realizarEscritura(String formato, HttpServletRequest request, HttpServletResponse response) {
+		String despachar = "";
+
+		boolean datoVacio = false;
+
+		Iterator<String> parametros = request.getParameterNames().asIterator();
+		ArrayList<Object> datos = new ArrayList<>();
+
+		while (parametros.hasNext() && !datoVacio) {
+			String parametro = parametros.next();
+			if (parametro.contains("dato-") && !request.getParameter(parametro).isBlank()) {
+				try {
+					datos.add(Double.parseDouble(request.getParameter(parametro)));
+				} catch (NumberFormatException ignore) {
+					datos.add(request.getParameter(parametro));
+				}
+
+			} else if (parametro.contains("dato-"))
+				datoVacio = true;
+		}
+
+		// Despachar a datos si falta de dar algun dato
+		despachar = datoVacio ? "TratamientoFich.jsp" : "AccesoDatosA.jsp";
+		request.setAttribute("faltaParametroFlag", datoVacio);
+
+		if (!datoVacio) {
+			boolean resultadoOperacion = false; // True = satisfactoria, False = Error en operacion
+
+			switch (formato) {
+			case "xls":
+				// Realizar escritura
+				resultadoOperacion = UtilidadesXLS
+						.escribir((String) getServletContext().getAttribute("fichero-" + formato), datos);
+
+				// En caso de operacion satisfactoria, cargar nuevos datos en el contexto
+				if (resultadoOperacion) {
+					getServletContext().setAttribute("fichero-" + formato + "-contenido",
+							UtilidadesXLS.leer((String) getServletContext().getAttribute("fichero-" + formato)));
+				}
+				break;
+			// TODO Agregar comunicacion con utilidades de lectura con archivos
+			}
+
+			//Procesar resultado de la operacion (lanzar error o cargar contenido escrito)
+			if (resultadoOperacion) {
+				cargaContenido(request);
+			} else {
+				despachar = "Error.jsp";
+				request.setAttribute("error", "Error al realizar la escritura");
+			}
+		}
+
+		return despachar;
 	}
 }

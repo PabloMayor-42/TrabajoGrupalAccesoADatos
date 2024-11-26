@@ -16,7 +16,13 @@
 					<table>
 						<tr>
 							<td>Formato del fichero:</td>
-							<td><select><option>XLS</option></select></td>
+							<td><select name="formato">
+								<option>XLS</option>
+								<option>XML</option>
+								<option>CSV</option>
+								<option>JSON</option>
+								<option>RDF</option>
+							</select></td>
 						</tr>
 						<tr>
 							<td colspan="2"><hr></td>
@@ -36,8 +42,8 @@
 				</td>
 				<td>
 					<table>
-						<% int celdas = ((DatosXLS)application.getAttribute("fichero-xls-contenido")).getEncabezado().length;
-							for(int i = 0; i < celdas ; i++){ %>
+						<% 
+							for(int i = 0; i < 5 ; i++){ %>
 								<tr><td>Dato <%= i+1 %></td><td><input name="dato-<%=i %>"></td></tr>
 							<% }
 						%>
