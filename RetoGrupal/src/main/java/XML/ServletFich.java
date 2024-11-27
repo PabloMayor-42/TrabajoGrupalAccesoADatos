@@ -9,6 +9,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -17,9 +19,12 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+import com.retogrupal.enitites.Residuo;
 
 /**
  * Servlet implementation class XML
@@ -48,49 +53,48 @@ public class ServletFich extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		boolean valido = ValidarInfo(request);
-		String despachar = "TratamientoFich.jsp";
-		if(valido) {
+		//boolean valido = ValidarInfo(request);
+			String despachar = "TratamientoFich.jsp";
 			if(request.getParameter("accion").equalsIgnoreCase("lectura")) {
 				/*Codigo de lectura del fichero XML*/
 				try {
-					ArrayList<Incidencia> incidencias = new ArrayList<Incidencia>();
-					DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-					File archivo = new File(getServletContext().getRealPath("fichero.xml"));
-					Document documento = builder.parse(archivo);
-					Element incidencia = documento.getDocumentElement();
-					NodeList lista_tags = incidencia.getChildNodes();
-					for(int i=0;i<lista_tags.getLength();i++) {
-						Node tag = lista_tags.item(i);
-						Element resultado = (Element) tag;
-						System.out.println(tag.getLocalName()+": "+resultado.getTextContent());
+					/*Creo un arraylist del Pojo residuo y saco de utilidades la lista de nodos del XML*/
+					ArrayList<Residuo> residuos = new ArrayList<Residuo>();
+					NodeList lista_nodos = UtilidadXML.LeerXML(getServletContext().getRealPath("recogida-de-residuos-desde-2013.xml"), "row");
+					/*Relleno el arraylist*/
+					for(int i = 0;i<lista_nodos.getLength();i++) {
+						Node nodo = lista_nodos.item(i);
+						if(nodo.getNodeType() == Node.ELEMENT_NODE) {
+							Element residuo = (Element) nodo;
+							LocalDate fecha = LocalDate.parse(residuo.getAttribute("Mes").substring(0, 10),DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+							Residuo r = new Residuo(fecha, residuo.getAttribute("Residuo"), residuo.getAttribute("Modalidad"), 
+									Double.parseDouble(residuo.getAttribute("Cantidad").replace(',', '.')));
+							residuos.add(r);
+						}
 					}
-					
-				} catch (ParserConfigurationException | SAXException e) {
+					//Los guardo en el contexto
+					getServletContext().setAttribute("lista_residuos",residuos);
+					despachar = "AccesoDatosA.jsp";
+				} catch (ParserConfigurationException | SAXException | IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
+					
 				
 			}
 			else if(request.getParameter("accion").equalsIgnoreCase("escritura")) {
 				/*Codigo de escritura de los ficheros XML*/
 			}
-		}
-		else {
-			getServletContext().setAttribute("faltaParametroFlag", true);
-		}
-		
-		request.getRequestDispatcher(despachar).forward(request, response);
+			request.getRequestDispatcher(despachar).forward(request, response);
 	}
 
-	private boolean ValidarInfo(HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		boolean valido = true;
-		for(int i = 0;i<12;i++) {
-			if(request.getParameter("dato-"+i).isBlank()) valido = false; 
-		}
-		return valido;
-	}
+//	private boolean ValidarInfo(HttpServletRequest request) {
+//		// TODO Auto-generated method stub
+//		boolean valido = true;
+//		for(int i = 0;i<12;i++) {
+//			if(request.getParameter("dato-"+i).isBlank()) valido = false; 
+//		}
+//		return valido;
+//	}
 
 }

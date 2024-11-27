@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
 	<h1>TRATAMIENTO DE FICHEROS</h1>
 	<form method="post" action="ServletFich">
@@ -15,7 +16,7 @@
 					<table>
 						<tr>
 							<td>Formato del fichero:</td>
-							<td><select><option>XLS</option></select></td>
+							<td><select><option>XML</option></select></td>
 						</tr>
 						<tr>
 							<td colspan="2"><hr></td>
