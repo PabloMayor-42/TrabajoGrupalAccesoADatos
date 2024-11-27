@@ -39,70 +39,48 @@ public class ServletFichero extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		/*
-		 * File prueba=new
-		 * File("RetoGrupal/scr/main/resources/atmosfera_inventario_emisiones.csv");
-		 * FileReader p=new FileReader(prueba); System.out.println(p);
-		 */
-		/*
-		 * JFileChooser fich=new JFileChooser();
-		 * fich.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES); int result =
-		 * fich.showOpenDialog(null); File file= fich.getSelectedFile();
-		 * System.out.println(file.getPath());
-		 */
-		String realpath = getServletContext().getRealPath("WEB-INF/classes/atmosfera_inventario_emisiones.csv");
-		System.out.println("Real path: " + realpath);
-		File file = new File(realpath);
-		if (file.exists()) {
-			// Aquí podrías leer el archivo
-			System.out.println("Archivo encontrado.");
-		} else {
-			System.out.println("Archivo no encontrado.");
-		}
-	}
-
-	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		// File prueba=new
-		// File("RetoGrupal/scr/main/resources/atmosfera_inventario_emisiones.csv");
-		// System.out.println(prueba);
-
+		//Fichero al que se accedera segun lo seleccionado
 		String despachar = null;
+		
+		//fichero que se desea leer/escribir
 		String fichero = request.getParameter("fichero");
+		
+		//Segun sea Leer o escribir se hara una cosa u otra
 		switch (request.getParameter("accion")) {
 		case "lectura":
+			//Leemos el tipo de fichero seleccionado
+			ArrayList<Residuo> residuos = new ArrayList();
 			if (fichero.equals("CSV")) {
-				ArrayList<Residuo> residuos = new ArrayList();
+				//Creamos un CSVReader para leer el fichero CSV
+				//Con getRealPath seleccionamos la ruta del fichero
 				CSVReader reader = new CSVReader(new FileReader(
 						getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.csv")));
 				String[] nextLine;
 				DateTimeFormatter frmt = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 				int i = 0;
 				try {
+					//Leemos las lineas del csv individualmente
 					while ((nextLine = reader.readNext()) != null) {
 						if (i > 0) {
+							
 							// Accede a los valores individuales
 							LocalDate fecha = LocalDateTime.parse(nextLine[0], frmt).toLocalDate(); 
 							String tipoResiduo = nextLine[1]; 
 							String modalidad = nextLine[2]; 
 							Double cantidad = Double.parseDouble(nextLine[3].replace(",", "."));
-
+							
+							//Creamos un nuevo Residuo
 							Residuo dato=new Residuo(fecha, tipoResiduo, modalidad, cantidad);
+							//Añadimos el residuo a la lista
 							residuos.add(dato);
 							
-							
 						} else {
+							//La primera linea es el encabezado por lo que lo guardamos aparte
 							String fecha = nextLine[0]; 
 							String tipoResiduo = nextLine[1];
 							String modalidad = nextLine[2];
@@ -119,24 +97,26 @@ public class ServletFichero extends HttpServlet {
 						}
 						i++;
 					}
-					getServletContext().setAttribute("residuos", residuos);
+					
 				} catch (CsvValidationException | IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				reader.close();
 			}
+			getServletContext().setAttribute("residuos", residuos);
 			despachar = "AccesoDatosA.jsp";
 			break;
 		case "escritura":
 			if (fichero.equals("CSV")) {
-
+				
 			}
 			break;
 		}
 
-		if (despachar == null)
+		if (despachar == null) {
 			despachar = "Error.jsp";
+		}
 
 		request.getRequestDispatcher(despachar).forward(request, response);
 	}
