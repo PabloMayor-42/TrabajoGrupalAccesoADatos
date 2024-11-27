@@ -43,7 +43,7 @@
 				<td>
 					<table>
 						<% 
-							for(int i = 0; i < 5 ; i++){ %>
+							for(int i = 0; i < 4 ; i++){ %>
 								<tr><td>Dato <%= i+1 %></td><td><input name="dato-<%=i %>"></td></tr>
 							<% }
 						%>
