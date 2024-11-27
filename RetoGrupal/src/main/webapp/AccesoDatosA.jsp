@@ -1,46 +1,33 @@
 <%@page import="com.retogrupal.entities.Residuo"%>
-<%@page import="com.retogrupal.entities.DatosXLS"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+ArrayList<String> encabezado=(ArrayList)getServletContext().getAttribute("encabezado"); 
+ArrayList<Residuo> residuos=(ArrayList)getServletContext().getAttribute("residuos"); 
+%>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Acceso a los Datos</title>
 </head>
 <body>
-<body>
-	<%
-	Object datos = request.getAttribute("contenido");
-	%>
-	<table border="1">
-		<%
-		if (datos instanceof DatosXLS) {
-			DatosXLS datosXLS = (DatosXLS) datos;
-		%>
+<h1>DATOS</h1>
+<table border='1'>
+	<tr>
+		<%for(String enc:encabezado){ %>
+			<td><%= enc %></td>
+		<%} %>
+	</tr>
+	<%for(Residuo res:residuos){ %>
 		<tr>
-			<%
-			for (String encab : datosXLS.getEncabezado()) {
-			%>
-			<td><%=encab%></td>
-			<%
-			}
-			%>
+			<td><%=res.getMes() %></td>
+			<td><%=res.getResiduo() %></td>
+			<td><%=res.getModalidad() %></td>
+			<td><%=res.getCantidad() %></td>
 		</tr>
-		<%
-		for (Residuo residuo : datosXLS.getCuerpo()) {
-		%>
-		<tr>
-			<td><%=residuo.getMes() %></td><td><%= residuo.getResiduo() %></td><td><%= residuo.getModalidad() %></td><td><%= residuo.getCantidad() %></td>
-		</tr>
-		<%
-		}
-		}
-		
-		
-		
-		%>
-	</table>
-</body>
+	<%}%>
+</table>
 </body>
 </html>

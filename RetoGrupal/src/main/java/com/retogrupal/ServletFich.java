@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-import com.retogrupal.entities.DatosXLS;
+import com.retogrupal.entities.RepresentacionTabla;
 import com.retogrupal.entities.Residuo;
 import com.retogrupal.utils.UtilidadesXLS;
 
@@ -85,8 +85,18 @@ public class ServletFich extends HttpServlet {
 	 * @param request Solicitud entrante
 	 */
 	private void cargaContenido(HttpServletRequest request) {
+		/*
+		 * VIEJO SISTEMA DE CARGA
+		 * 
 		request.setAttribute("contenido", getServletContext()
-				.getAttribute("fichero-" + request.getParameter("formato").toLowerCase() + "-contenido"));
+				.getAttribute("fichero-" + request.getParameter("formato").toLowerCase() + "-contenido"));*/
+		
+		RepresentacionTabla repr = (RepresentacionTabla)  getServletContext()
+				.getAttribute("fichero-" + request.getParameter("formato").toLowerCase() + "-contenido");
+		
+		getServletContext().setAttribute("encabezado",repr.getEncabezado());
+		
+		getServletContext().setAttribute("residuos", repr.getCuerpo());
 	}
 
 	/**

@@ -14,7 +14,7 @@ import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 
-import com.retogrupal.entities.DatosXLS;
+import com.retogrupal.entities.RepresentacionTabla;
 import com.retogrupal.entities.Residuo;
 
 public class UtilidadesXLS {
@@ -25,8 +25,8 @@ public class UtilidadesXLS {
 	 * @param archivo Ruta del archivo a leer
 	 * @return POJO de datos leidos (encabezado, POJO de datos por fila)
 	 */
-	public static DatosXLS leer(String archivo) {
-		DatosXLS datosXLS = null;
+	public static RepresentacionTabla leer(String archivo) {
+		RepresentacionTabla datosXLS = null;
 
 		try (HSSFWorkbook wk = new HSSFWorkbook(new FileInputStream(new File(archivo)))) {
 			// Cargar hoja principal del excel
@@ -56,7 +56,7 @@ public class UtilidadesXLS {
 			}
 
 			// Crear POJO datos con cabecera y filas
-			datosXLS = new DatosXLS(encabezado.toArray(new String[0]), cuerpo);
+			datosXLS = new RepresentacionTabla(encabezado, cuerpo);
 		} catch (IOException e) {
 
 		}
@@ -83,7 +83,7 @@ public class UtilidadesXLS {
 			return false;
 
 		// Leer de nuevo los datos (puede que el contexto este desactualizado)
-		DatosXLS datosXLS = leer(archivo);
+		RepresentacionTabla datosXLS = leer(archivo);
 
 		try (HSSFWorkbook wk = new HSSFWorkbook(new FileInputStream(excel))) {
 			// Cargar hoja principal del excel
