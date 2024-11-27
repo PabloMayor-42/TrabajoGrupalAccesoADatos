@@ -63,7 +63,7 @@ public class ServletFich extends HttpServlet {
 			break;
 		default:
 			// Operacion no indicada
-			request.setAttribute("error", "No se ha seleccionado una opción valida (lectura/scritura)");
+			request.setAttribute("error", "No se ha seleccionado una opción valida (lectura/escritura)");
 			break;
 		}
 
