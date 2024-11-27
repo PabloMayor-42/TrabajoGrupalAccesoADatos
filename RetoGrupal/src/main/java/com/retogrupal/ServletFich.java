@@ -91,26 +91,34 @@ public class ServletFich extends HttpServlet {
 	 * @param formato  Nombre del formato escrito en minúsculas. Ejemplo: xls
 	 * @param request  Solicitud entrante
 	 * @param response Respuesta del servlet
-	 * @return
+	 * @return Nombre de la vista a la que despachará una vez intentada la escritura
 	 */
 	private String realizarEscritura(String formato, HttpServletRequest request, HttpServletResponse response) {
 		String despachar = "";
 
 		boolean datoVacio = false;
 
+		// Toma todos los nombres de los parametros enviados en la request
 		Iterator<String> parametros = request.getParameterNames().asIterator();
+
+		// Contiene la line que se ira leyendo. Es de tipo object para poder tipar los
+		// datos (numeros y strings)
 		ArrayList<Object> datos = new ArrayList<>();
 
 		while (parametros.hasNext() && !datoVacio) {
 			String parametro = parametros.next();
-			if (parametro.contains("dato-") && !request.getParameter(parametro).isBlank()) {
+
+			// Si tiene el prefijo "dato-" corresponde a los input reservados para agregar
+			// datos al fichero (solo tiene sentido agregar si los parametros procesados tienen datos)
+			if (parametro.contains("dato-") && !request.getParameter(parametro).isBlank() && !datoVacio) {
+				// Formateo de datos (int / string)
 				try {
 					datos.add(Double.parseDouble(request.getParameter(parametro)));
 				} catch (NumberFormatException ignore) {
 					datos.add(request.getParameter(parametro));
 				}
 
-			} else if (parametro.contains("dato-"))
+			} else if (parametro.contains("dato-")) // Parametros sin valor asociado
 				datoVacio = true;
 		}
 
@@ -136,7 +144,7 @@ public class ServletFich extends HttpServlet {
 			// TODO Agregar comunicacion con utilidades de lectura con archivos
 			}
 
-			//Procesar resultado de la operacion (lanzar error o cargar contenido escrito)
+			// Procesar resultado de la operacion (lanzar error o cargar contenido escrito)
 			if (resultadoOperacion) {
 				cargaContenido(request);
 			} else {
