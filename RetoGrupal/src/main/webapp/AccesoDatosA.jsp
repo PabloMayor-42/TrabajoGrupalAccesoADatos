@@ -1,4 +1,5 @@
-<%@page import="com.retogrupal.xls.entities.DatosXLS"%>
+<%@page import="com.retogrupal.entities.Residuo"%>
+<%@page import="com.retogrupal.entities.DatosXLS"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,16 +28,10 @@
 			%>
 		</tr>
 		<%
-		for (Object[] celdas : datosXLS.getCuerpo()) {
+		for (Residuo residuo : datosXLS.getCuerpo()) {
 		%>
 		<tr>
-			<%
-			for (Object celda : celdas) {
-			%>
-			<td><%=celda%></td>
-			<%
-			}
-			%>
+			<td><%=residuo.getMes() %></td><td><%= residuo.getResiduo() %></td><td><%= residuo.getModalidad() %></td><td><%= residuo.getCantidad() %></td>
 		</tr>
 		<%
 		}

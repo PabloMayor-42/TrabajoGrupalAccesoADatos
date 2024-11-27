@@ -14,7 +14,8 @@ import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 
-import com.retogrupal.xls.entities.DatosXLS;
+import com.retogrupal.entities.DatosXLS;
+import com.retogrupal.entities.Residuo;
 
 public class UtilidadesXLS {
 	/**
@@ -22,7 +23,7 @@ public class UtilidadesXLS {
 	 * los datos leidos
 	 * 
 	 * @param archivo Ruta del archivo a leer
-	 * @return POJO de datos leidos
+	 * @return POJO de datos leidos (encabezado, POJO de datos por fila)
 	 */
 	public static DatosXLS leer(String archivo) {
 		DatosXLS datosXLS = null;
@@ -33,33 +34,25 @@ public class UtilidadesXLS {
 
 			// Composicion del documento (encabezado y cuerpo)
 			ArrayList<String> encabezado = new ArrayList<String>();
-			ArrayList<Object[]> cuerpo = new ArrayList<Object[]>();
+			ArrayList<Residuo> cuerpo = new ArrayList<Residuo>();
 
 			// Recorrer contenido
 			for (int i = hojaPrincipal.getFirstRowNum(); i <= hojaPrincipal.getLastRowNum(); i++) {
 				Iterator<Cell> celdas = hojaPrincipal.getRow(i).cellIterator();
-				ArrayList<Object> fila = new ArrayList<Object>();
+				Row row = hojaPrincipal.getRow(i);
 
 				// Recorrer celdas de cada fila
-				while (celdas.hasNext()) {
-					Cell celda = celdas.next();
-
-					// Selector de objetivo (para agregar las celdas al encabezado o al cuerpo de la
-					// tabla
-					ArrayList objetivo = (i == hojaPrincipal.getFirstRowNum() ? encabezado : fila);
-
-					// Cada celda puede tener un tipo de dato (se contempla la posibilidad de
-					// numericos)
-					if (celda.getCellType() == CellType.NUMERIC) {
-						objetivo.add((Double) celda.getNumericCellValue());
-					} else {
-						objetivo.add(celda.getStringCellValue());
-					}
+				while (celdas.hasNext() && (i == hojaPrincipal.getFirstRowNum())) {
+					encabezado.add(celdas.next().getStringCellValue());
 				}
 
-				// Agregar fila a las filas (solo si no es encabezado)
 				if (i != hojaPrincipal.getFirstRowNum())
-					cuerpo.add(fila.toArray(new Object[0]));
+					cuerpo.add(new Residuo(
+							row.getCell(0).getLocalDateTimeCellValue().toLocalDate(),
+							row.getCell(1).getStringCellValue(),
+							row.getCell(2).getStringCellValue(),
+							row.getCell(3).getNumericCellValue()
+							));
 			}
 
 			// Crear POJO datos con cabecera y filas
@@ -79,7 +72,7 @@ public class UtilidadesXLS {
 	 * @return Estado de la operacion (true si se ha realizado y false si ha habido
 	 *         algun error)
 	 */
-	public static boolean escribir(String archivo, ArrayList<Object> datosFila) {
+	public static boolean escribir(String archivo, Residuo datosFila) {
 		// Cargar datos del xsl
 		File excel = new File(archivo);
 
@@ -100,17 +93,16 @@ public class UtilidadesXLS {
 			Row fila = hojaPrincipal.createRow(hojaPrincipal.getLastRowNum() + 1);
 
 			// Realizar append de celdas en una nueva fila (solo admite numeros y texto)
-			for (int i = 0; i < datosFila.size(); i++) {
-				Cell celda = fila.createCell(i,
-						datosFila.get(i) instanceof Double ? CellType.NUMERIC : CellType.STRING);
-
-				// Establecer el valor de celda y tiparlo (solo se tipan numeros y strings)
-				if (datosFila.get(i) instanceof Double)
-					celda.setCellValue((Double) datosFila.get(i));
-				else
-					celda.setCellValue((String) datosFila.get(i));
-			}
-
+			Cell celda0 = fila.createCell(0,CellType.STRING);
+			Cell celda1 = fila.createCell(1,CellType.STRING);
+			Cell celda2 = fila.createCell(2,CellType.STRING);
+			Cell celda3 = fila.createCell(3,CellType.NUMERIC);
+			
+			celda0.setCellValue(datosFila.getMes());
+			celda1.setCellValue(datosFila.getResiduo());
+			celda2.setCellValue(datosFila.getModalidad());
+			celda3.setCellValue(datosFila.getCantidad());
+			
 			// Agregar los cambios al xls (reescribir el workbook)
 			wk.write(excel);
 			

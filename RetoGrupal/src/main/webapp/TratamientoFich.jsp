@@ -1,4 +1,4 @@
-<%@page import="com.retogrupal.xls.entities.DatosXLS"%>
+<%@page import="com.retogrupal.entities.DatosXLS"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
 								<option>XML</option>
 								<option>CSV</option>
 								<option>JSON</option>
-								<option>RDF</option>
+								<option>ODF</option>
 							</select></td>
 						</tr>
 						<tr>

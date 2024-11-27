@@ -7,12 +7,16 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.http.HttpRequest;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
+import com.retogrupal.entities.DatosXLS;
+import com.retogrupal.entities.Residuo;
 import com.retogrupal.utils.UtilidadesXLS;
-import com.retogrupal.xls.entities.DatosXLS;
 
 /**
  * Servlet implementation class ServletFich
@@ -98,27 +102,23 @@ public class ServletFich extends HttpServlet {
 
 		boolean datoVacio = false;
 
+		DateTimeFormatter formateadorAuxiliar = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
 		// Toma todos los nombres de los parametros enviados en la request
 		Iterator<String> parametros = request.getParameterNames().asIterator();
 
-		// Contiene la line que se ira leyendo. Es de tipo object para poder tipar los
-		// datos (numeros y strings)
-		ArrayList<Object> datos = new ArrayList<>();
+		// Contiene la linea que se ira leyendo
+		ArrayList<String> datos = new ArrayList<>();
 
 		while (parametros.hasNext() && !datoVacio) {
 			String parametro = parametros.next();
 
 			// Si tiene el prefijo "dato-" corresponde a los input reservados para agregar
-			// datos al fichero (solo tiene sentido agregar si los parametros procesados tienen datos)
-			if (parametro.contains("dato-") && !request.getParameter(parametro).isBlank() && !datoVacio) {
-				// Formateo de datos (int / string)
-				try {
-					datos.add(Double.parseDouble(request.getParameter(parametro)));
-				} catch (NumberFormatException ignore) {
-					datos.add(request.getParameter(parametro));
-				}
-
-			} else if (parametro.contains("dato-")) // Parametros sin valor asociado
+			// datos al fichero (solo tiene sentido agregar si los parametros procesados
+			// tienen datos)
+			if (parametro.contains("dato-") && !request.getParameter(parametro).isBlank() && !datoVacio)
+				datos.add(request.getParameter(parametro));
+			else if (parametro.contains("dato-")) // Parametros sin valor asociado
 				datoVacio = true;
 		}
 
@@ -132,8 +132,19 @@ public class ServletFich extends HttpServlet {
 			switch (formato) {
 			case "xls":
 				// Realizar escritura
-				resultadoOperacion = UtilidadesXLS
-						.escribir((String) getServletContext().getAttribute("fichero-" + formato), datos);
+				try {
+					resultadoOperacion = UtilidadesXLS.escribir(
+							(String) getServletContext().getAttribute("fichero-" + formato),
+							new Residuo(LocalDate.parse(datos.get(0), formateadorAuxiliar), datos.get(1), datos.get(2),
+									Double.parseDouble(datos.get(3)))); // Crear POJO con los datos sacados de las
+																		// cabeceras
+				} catch (DateTimeParseException e) {
+					resultadoOperacion = false;
+					request.setAttribute("error", "Fecha proporcionada incorrecta (formato de dato 1: yyyy-mm-dd)");
+				} catch (NumberFormatException e) {
+					resultadoOperacion = false;
+					request.setAttribute("error", "Numero proporcionado incorrecto (dato 4)");
+				}
 
 				// En caso de operacion satisfactoria, cargar nuevos datos en el contexto
 				if (resultadoOperacion) {
@@ -149,7 +160,9 @@ public class ServletFich extends HttpServlet {
 				cargaContenido(request);
 			} else {
 				despachar = "Error.jsp";
-				request.setAttribute("error", "Error al realizar la escritura");
+
+				if (request.getAttribute("error") == null)
+					request.setAttribute("error", "Error al realizar la escritura");
 			}
 		}
 

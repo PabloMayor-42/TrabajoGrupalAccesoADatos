@@ -1,4 +1,4 @@
-package com.retogrupal.xls.entities;
+package com.retogrupal.entities;
 
 import java.util.ArrayList;
 
@@ -7,7 +7,7 @@ public class DatosXLS {
 	private String[] encabezado;
 	
 	//Contenido del cuerpo del documento (por filas)
-	private ArrayList<Object[]> cuerpo;
+	private ArrayList<Residuo> cuerpo;
 	
 	public String[] getEncabezado() {
 		return encabezado;
@@ -15,13 +15,13 @@ public class DatosXLS {
 	public void setEncabezado(String[] encabezado) {
 		this.encabezado = encabezado;
 	}
-	public ArrayList<Object[]> getCuerpo() {
+	public ArrayList<Residuo> getCuerpo() {
 		return cuerpo;
 	}
-	public void setCuerpo(ArrayList<Object[]> cuerpo) {
+	public void setCuerpo(ArrayList<Residuo> cuerpo) {
 		this.cuerpo = cuerpo;
 	}
-	public DatosXLS(String[] encabezado, ArrayList<Object[]> cuerpo) {
+	public DatosXLS(String[] encabezado, ArrayList<Residuo> cuerpo) {
 		super();
 		this.encabezado = encabezado;
 		this.cuerpo = cuerpo;
