@@ -1,4 +1,4 @@
-package XML;
+
 
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -25,18 +27,19 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import com.retogrupal.enitites.Residuo;
+import com.retogrupal.utils.UtilidadXML;
 
 /**
  * Servlet implementation class XML
  */
-@WebServlet("/ServletFich")
-public class ServletFich extends HttpServlet {
+@WebServlet("/ServletFichero")
+public class ServletFichero extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletFich() {
+    public ServletFichero() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -59,22 +62,11 @@ public class ServletFich extends HttpServlet {
 				/*Codigo de lectura del fichero XML*/
 				try {
 					/*Creo un arraylist del Pojo residuo y saco de utilidades la lista de nodos del XML*/
-					ArrayList<Residuo> residuos = new ArrayList<Residuo>();
-					NodeList lista_nodos = UtilidadXML.LeerXML(getServletContext().getRealPath("recogida-de-residuos-desde-2013.xml"), "row");
-					/*Relleno el arraylist*/
-					for(int i = 0;i<lista_nodos.getLength();i++) {
-						Node nodo = lista_nodos.item(i);
-						if(nodo.getNodeType() == Node.ELEMENT_NODE) {
-							Element residuo = (Element) nodo;
-							LocalDate fecha = LocalDate.parse(residuo.getAttribute("Mes").substring(0, 10),DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-							Residuo r = new Residuo(fecha, residuo.getAttribute("Residuo"), residuo.getAttribute("Modalidad"), 
-									Double.parseDouble(residuo.getAttribute("Cantidad").replace(',', '.')));
-							residuos.add(r);
-						}
-					}
-					//Los guardo en el contexto
-					getServletContext().setAttribute("lista_residuos",residuos);
+					ArrayList<Residuo> residuos = UtilidadXML.LeerXML(getServletContext().getRealPath("recogida-de-residuos-desde-2013.xml"), "row");;
+					getServletContext().setAttribute("residuos",residuos);
+					getServletContext().setAttribute("encabezado", UtilidadXML.CargarEncabezados());
 					despachar = "AccesoDatosA.jsp";
+					
 				} catch (ParserConfigurationException | SAXException | IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -84,6 +76,29 @@ public class ServletFich extends HttpServlet {
 			}
 			else if(request.getParameter("accion").equalsIgnoreCase("escritura")) {
 				/*Codigo de escritura de los ficheros XML*/
+				LocalDate fecha = LocalDate.parse(request.getParameter("dato1"),DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+				String residuo = request.getParameter("dato2");
+				String modalidad = request.getParameter("dato3");
+				double cantidad = Double.parseDouble(request.getParameter("dato4"));
+				Residuo r = new Residuo(fecha, residuo, modalidad, cantidad);
+				try {
+					UtilidadXML.EscribirXML(getServletContext().getRealPath("recogida-de-residuos-desde-2013.xml"),r);
+				} catch (ParserConfigurationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (SAXException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (TransformerFactoryConfigurationError e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (TransformerException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			request.getRequestDispatcher(despachar).forward(request, response);
 	}
