@@ -55,7 +55,8 @@ public class ServletFichero extends HttpServlet {
 		case "lectura":
 			//Leemos el tipo de fichero seleccionado
 			ArrayList<Residuo> residuos = new ArrayList();
-			if (fichero.equals("CSV")) {
+			switch (fichero) {
+			case "CSV": 
 				//Creamos un CSVReader para leer el fichero CSV
 				//Con getRealPath seleccionamos la ruta del fichero
 				CSVReader reader = new CSVReader(new FileReader(
@@ -103,13 +104,41 @@ public class ServletFichero extends HttpServlet {
 					e.printStackTrace();
 				}
 				reader.close();
+				break;
+			case "XLS":
+				
+				break;
+			case "YAML":
+				
+				break;
+			case "JSON":
+				
+				break;
+			case "XML":
+				
+				break;
 			}
+			
 			getServletContext().setAttribute("residuos", residuos);
 			despachar = "AccesoDatosA.jsp";
 			break;
 		case "escritura":
-			if (fichero.equals("CSV")) {
+			switch (fichero) {
+			case "CSV": 
 				
+				break;
+			case "XLS":
+				
+				break;
+			case "YAML":
+				
+				break;
+			case "JSON":
+				
+				break;
+			case "XML":
+				
+				break;
 			}
 			break;
 		}
