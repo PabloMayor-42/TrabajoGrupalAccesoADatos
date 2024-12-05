@@ -18,6 +18,14 @@
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
   </properties>
+  
+  <repositories>
+   <repository>
+      <id>repository.groupdocs.com</id>
+      <name>GroupDocs Repository</name>
+      <url>https://releases.groupdocs.com/java/repo/</url>
+   </repository>
+</repositories>
 
   <dependencies>
     <dependency>
@@ -26,7 +34,28 @@
       <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>6.1.0</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>com.github.miachm.sods</groupId>
+        <artifactId>SODS</artifactId>
+        <version>1.6.2</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.groupdocs</groupId>
+      <artifactId>groupdocs-editor</artifactId>
+      <version>24.9</version>
+   </dependency>
+    
   </dependencies>
+
+	
 
   <build>
     <finalName>RetoGrupal</finalName>
@@ -44,6 +73,10 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
+          <configuration>
+          	<source>18</source>
+          	<target>18</target>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
