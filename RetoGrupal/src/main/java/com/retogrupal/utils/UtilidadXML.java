@@ -27,13 +27,13 @@ import com.retogrupal.enitites.Residuo;
 
 public class UtilidadXML {
 
-	public static ArrayList<Residuo> LeerXML(String ruta,String etiqueta) throws ParserConfigurationException, SAXException, IOException {
+	public static ArrayList<Residuo> LeerXML(String ruta) throws ParserConfigurationException, SAXException, IOException {
 		ArrayList<Residuo> residuos = new ArrayList<Residuo>();
 		DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 		File archivo = new File(ruta);
 		Document documento = builder.parse(archivo);
 		Element incidencia = documento.getDocumentElement();
-		NodeList lista_nodos = incidencia.getElementsByTagName(etiqueta);
+		NodeList lista_nodos = incidencia.getElementsByTagName("row");
 		for(int i = 0;i<lista_nodos.getLength();i++) {
 			Node nodo = lista_nodos.item(i);
 			if(nodo.getNodeType() == Node.ELEMENT_NODE) {
