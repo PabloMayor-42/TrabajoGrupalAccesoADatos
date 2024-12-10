@@ -93,7 +93,7 @@ public class ServletFichero extends HttpServlet {
 					        encabezado.add(modalidad);
 					        encabezado.add(cantidad);
 							
-					        getServletContext().setAttribute("encabezado", encabezado);
+					        request.setAttribute("encabezado", encabezado);
 					        
 						}
 						i++;
@@ -119,7 +119,7 @@ public class ServletFichero extends HttpServlet {
 				break;
 			}
 			
-			getServletContext().setAttribute("residuos", residuos);
+			 request.setAttribute("residuos", residuos);
 			despachar = "AccesoDatosA.jsp";
 			break;
 		case "escritura":
