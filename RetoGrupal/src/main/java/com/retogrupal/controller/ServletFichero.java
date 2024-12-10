@@ -140,7 +140,8 @@ public class ServletFichero extends HttpServlet {
 				}
 				break;
 			}
-
+			
+			
 			request.setAttribute("residuos", residuos);
 			despachar = "AccesoDatosA.jsp";
 			break;

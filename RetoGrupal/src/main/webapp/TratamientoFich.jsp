@@ -43,12 +43,24 @@
 				</td>
 				<td>
 					<table>
-						<tr><td>DATO1: <input type="date" name="dato1"></td></tr>
-						<tr><td>DATO2: <input type="text" name="dato2"></td></tr>
-						<tr><td>DATO3: <input type="text" name="dato3"></td></tr>
-						<tr><td>DATO4: <input type="text" name="dato4"></td></tr>
+						<tr>
+							<td>MES:</td>
+							<td><input type="date" name="dato1"></td>
+						</tr>
+						<tr>
+							<td>RESIDUO:</td>
+							<td><input type="text" name="dato2"></td>
+						</tr>
+						<tr>
+							<td>MODALIDAD:</td>
+							<td><input type="text" name="dato3"></td>
+						</tr>
+						<tr>
+							<td>CANTIDAD:</td>
+							<td><input type="text" name="dato4"></td>
+						</tr>
 					</table>
-					<p style="color: red;"><%= (request.getAttribute("faltaParametroFlag") != null && (boolean)request.getAttribute("faltaParametroFlag"))? "(*) Los campos no pueden estar vacios" : "&nbsp;" %></p>
+					<p style="color: red;"><%=(request.getAttribute("faltaParametroFlag") != null && (boolean) request.getAttribute("faltaParametroFlag"))? "(*) Los campos no pueden estar vacios": "&nbsp;"%></p>
 				</td>
 			</tr>
 		</table>
