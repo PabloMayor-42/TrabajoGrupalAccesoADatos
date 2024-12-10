@@ -1,6 +1,9 @@
-package com.retogrupal.entities;
+package com.retogrupal.utils;
 
 import java.util.ArrayList;
+
+import com.retogrupal.enitites.Residuo;
+
 
 public class RepresentacionTabla {
 	//Cebecera con el nombre de las columnas de la tabla

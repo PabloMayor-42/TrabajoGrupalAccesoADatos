@@ -1,4 +1,4 @@
-package com.retogrupal.entities;
+package com.retogrupal.enitites;
 
 import java.time.LocalDate;
 

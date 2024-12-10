@@ -14,8 +14,9 @@ import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 
-import com.retogrupal.entities.RepresentacionTabla;
-import com.retogrupal.entities.Residuo;
+import com.retogrupal.enitites.Residuo;
+
+
 
 public class UtilidadesXLS {
 	/**
