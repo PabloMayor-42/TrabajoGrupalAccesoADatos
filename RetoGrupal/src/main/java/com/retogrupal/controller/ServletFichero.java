@@ -97,7 +97,7 @@ public class ServletFichero extends HttpServlet {
 							encabezado.add(modalidad);
 							encabezado.add(cantidad);
 
-							getServletContext().setAttribute("encabezado", encabezado);
+							request.setAttribute("encabezado", encabezado);
 
 						}
 						i++;
@@ -113,7 +113,7 @@ public class ServletFichero extends HttpServlet {
 				RepresentacionTabla tabla = UtilidadesXLS
 						.leer(getServletContext().getRealPath("recogida-de-residuos-desde-2013.xls"));
 				if (tabla != null) {
-					getServletContext().setAttribute("encabezado", tabla.getEncabezado());
+					request.setAttribute("encabezado", tabla.getEncabezado());
 					residuos = tabla.getCuerpo();
 				}
 				break;
@@ -128,7 +128,7 @@ public class ServletFichero extends HttpServlet {
 				break;
 			}
 
-			getServletContext().setAttribute("residuos", residuos);
+			request.setAttribute("residuos", residuos);
 			despachar = "AccesoDatosA.jsp";
 			break;
 		case "escritura":
@@ -140,7 +140,7 @@ public class ServletFichero extends HttpServlet {
 				DateTimeFormatter formateadorAuxiliar = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 				Iterator<String> parametros = request.getParameterNames().asIterator();
-				// Contiene la linea que se ira leyendo
+
 				ArrayList<String> datos = new ArrayList<>();
 
 				boolean datoVacio = false;

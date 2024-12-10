@@ -4,8 +4,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-ArrayList<String> encabezado=(ArrayList)getServletContext().getAttribute("encabezado"); 
-ArrayList<Residuo> residuos=(ArrayList)getServletContext().getAttribute("residuos"); 
+ArrayList<String> encabezado=(ArrayList)request.getAttribute("encabezado"); 
+ArrayList<Residuo> residuos=(ArrayList)request.getAttribute("residuos"); 
 %>
 <html>
 <head>
