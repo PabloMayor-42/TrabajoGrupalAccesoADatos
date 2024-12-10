@@ -19,14 +19,19 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 import javax.swing.JFileChooser;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactoryConfigurationError;
 
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
+import org.xml.sax.SAXException;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
 import com.retogrupal.enitites.Residuo;
 import com.retogrupal.utils.RepresentacionTabla;
+import com.retogrupal.utils.UtilidadXML;
 import com.retogrupal.utils.UtilidadesXLS;
 
 /**
@@ -126,7 +131,13 @@ public class ServletFichero extends HttpServlet {
 
 				break;
 			case "XML":
-
+				try {
+					residuos = UtilidadXML.LeerXML(getServletContext().getRealPath("recogida-de-residuos-desde-2013.xml"));
+					request.setAttribute("encabezado", UtilidadXML.CargarEncabezados());
+				} catch (ParserConfigurationException | SAXException | IOException e) {
+					// TODO Auto-generated catch block
+					request.setAttribute("error", e.getMessage());
+				}
 				break;
 			}
 
@@ -137,7 +148,7 @@ public class ServletFichero extends HttpServlet {
 			String fecha = request.getParameter("dato1");
 			String tipoResiduo = request.getParameter("dato2");
 			String modalidad = request.getParameter("dato3");
-			String cantidad = "\"" + request.getParameter("dato4") + "\"";
+			String cantidad = request.getParameter("dato4");
 
 			if (fecha.isBlank() || tipoResiduo.isBlank() || modalidad.isBlank() || cantidad.isBlank()) {
 				String error = "";
@@ -177,7 +188,7 @@ public class ServletFichero extends HttpServlet {
 
 						estado = UtilidadesXLS.escribir(
 								getServletContext().getRealPath("recogida-de-residuos-desde-2013.xls"),
-								new Residuo(LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+								new Residuo(LocalDate.parse(fecha, DateTimeFormatter.ofPattern("yyyy-MM-dd")),
 										tipoResiduo, modalidad, Double.parseDouble(cantidad)));
 						if (!estado) {
 							request.setAttribute("error", "Error al realizar la escritura sobre el fichero XLS");
@@ -192,7 +203,18 @@ public class ServletFichero extends HttpServlet {
 
 						break;
 					case "XML":
-
+						try {
+							Residuo r = new Residuo(
+									LocalDate.parse(fecha,DateTimeFormatter.ofPattern("yyyy-MM-dd")),
+									tipoResiduo , modalidad,  
+									Double.parseDouble(cantidad));
+							UtilidadXML.EscribirXML(getServletContext().getRealPath("recogida-de-residuos-desde-2013.xml"), r);
+							despachar = "TratamientoFich.jsp";
+						} catch (ParserConfigurationException | SAXException | IOException
+								| TransformerFactoryConfigurationError | TransformerException e) {
+							// TODO Auto-generated catch block
+							request.setAttribute("error", e.getMessage());
+						}
 						break;
 					}
 				} catch (Exception e) {
