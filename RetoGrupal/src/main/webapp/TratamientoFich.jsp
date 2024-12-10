@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Tratamiento fichero</title>
 </head>
 <body>
 	<h1>TRATAMIENTO DE FICHEROS</h1>
@@ -15,15 +15,13 @@
 					<table>
 						<tr>
 							<td>Formato del fichero:</td>
-							<td>
-								<select name="fichero">
+							<td><select name="fichero">
 									<option>XLS</option>
-									<option>YAML</option>
+									<option>ODS</option>
 									<option>JSON</option>
 									<option>CSV</option>
 									<option>XML</option>
-								</select>
-							</td>
+							</select></td>
 						</tr>
 						<tr>
 							<td colspan="2"><hr></td>
@@ -33,7 +31,8 @@
 						</tr>
 						<tr>
 							<td>Lectura:</td>
-							<td><input type="radio" name="accion" value="lectura" checked></td>
+							<td><input type="radio" name="accion" value="lectura"
+								checked></td>
 						</tr>
 						<tr>
 							<td>Escritura:</td>
@@ -43,14 +42,24 @@
 				</td>
 				<td>
 					<table>
-						<tr><td>DATO1: <input type="text" name="dato1"></td></tr>
-						<tr><td>DATO2: <input type="text" name="dato2"></td></tr>
-						<tr><td>DATO3: <input type="text" name="dato3"></td></tr>
-						<tr><td>DATO4: <input type="text" name="dato4"></td></tr>
-						<tr><td>DATO5: <input type="text" name="dato5"></td></tr>
-						<tr><td>DATO6: <input type="text" name="dato6"></td></tr>
+						<tr>
+							<td>MES:</td>
+							<td><input type="date" name="dato1"></td>
+						</tr>
+						<tr>
+							<td>RESIDUO:</td>
+							<td><input type="text" name="dato2"></td>
+						</tr>
+						<tr>
+							<td>MODALIDAD:</td>
+							<td><input type="text" name="dato3"></td>
+						</tr>
+						<tr>
+							<td>CANTIDAD:</td>
+							<td><input type="text" name="dato4"></td>
+						</tr>
 					</table>
-					<p style="color: red;"><%= (request.getAttribute("faltaParametroFlag") != null && (boolean)request.getAttribute("faltaParametroFlag"))? "(*) Los campos no pueden estar vacios" : "&nbsp;" %></p>
+					<p style="color: red;"><%=(request.getAttribute("faltaParametroFlag") != null && (boolean) request.getAttribute("faltaParametroFlag"))? "(*) Los campos no pueden estar vacios": "&nbsp;"%></p>
 				</td>
 			</tr>
 		</table>
