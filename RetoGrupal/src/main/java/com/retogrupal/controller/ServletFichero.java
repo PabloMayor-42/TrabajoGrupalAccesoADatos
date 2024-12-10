@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -22,6 +23,7 @@ import javax.swing.JFileChooser;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 
 import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
 import com.retogrupal.enitites.Residuo;
 import com.retogrupal.utils.RepresentacionTabla;
@@ -132,65 +134,72 @@ public class ServletFichero extends HttpServlet {
 			despachar = "AccesoDatosA.jsp";
 			break;
 		case "escritura":
-			switch (fichero) {
-			case "CSV":
+			String fecha = request.getParameter("dato1");
+			String tipoResiduo = request.getParameter("dato2");
+			String modalidad = request.getParameter("dato3");
+			String cantidad = "\"" + request.getParameter("dato4") + "\"";
 
-				break;
-			case "XLS":
-				DateTimeFormatter formateadorAuxiliar = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
-				Iterator<String> parametros = request.getParameterNames().asIterator();
-
-				ArrayList<String> datos = new ArrayList<>();
-
-				boolean datoVacio = false;
-				while (parametros.hasNext() && !datoVacio) {
-					String parametro = parametros.next();
-
-					// Si tiene el prefijo "dato-" corresponde a los input reservados para agregar
-					// datos al fichero (solo tiene sentido agregar si los parametros procesados
-					// tienen datos)
-					if (parametro.contains("dato") && !request.getParameter(parametro).isBlank() && !datoVacio)
-						datos.add(request.getParameter(parametro));
-					else if (parametro.contains("dato")) // Parametros sin valor asociado
-						datoVacio = true;
+			if (fecha.isBlank() || tipoResiduo.isBlank() || modalidad.isBlank() || cantidad.isBlank()) {
+				String error = "";
+				if (fecha.isBlank()) {
+					error += "No se ha introducido Dato 1\n";
 				}
+				if (tipoResiduo.isBlank()) {
+					error += "No se ha introducido Dato 2\n";
+				}
+				if (modalidad.isBlank()) {
+					error += "No se ha introducido Dato 3\n";
+				}
+				if (cantidad.isBlank()) {
+					error += "No se ha introducido Dato 4\n";
+				}
+				despachar = "Error.jsp";
 
-				if (datoVacio) {
-					despachar = "TratamientoFich.jsp";
-					request.setAttribute("faltaParametroFlag", datoVacio);
-				} else {
-					boolean estado;
+			} else {
+				try {
 
-					try {
+					switch (fichero) {
+					case "CSV":
+						String path = getServletContext()
+								.getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.csv");
+						System.out.println(path);
+
+						CSVWriter writer = new CSVWriter(new FileWriter(path, true));
+
+						String[] datos = { (fecha + "T00:00," + tipoResiduo + "," + modalidad + "," + cantidad) };
+						writer.writeNext(datos);
+						writer.close();
+						despachar = "TratamientoFich.jsp";
+
+						break;
+					case "XLS":
+						boolean estado;
+
 						estado = UtilidadesXLS.escribir(
 								getServletContext().getRealPath("recogida-de-residuos-desde-2013.xls"),
-								new Residuo(LocalDate.parse(datos.get(0), formateadorAuxiliar), datos.get(1),
-										datos.get(2), Double.parseDouble(datos.get(3))));
-					} catch (DateTimeParseException e) {
-						estado = false;
-						request.setAttribute("error", "Fecha proporcionada incorrecta (formato de dato 1: yyyy-mm-dd)");
-					} catch (NumberFormatException e) {
-						estado = false;
-						request.setAttribute("error", "Numero proporcionado incorrecto (dato 4)");
-					}
+								new Residuo(LocalDate.parse(fecha, DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+										tipoResiduo, modalidad, Double.parseDouble(cantidad)));
+						if (!estado) {
+							request.setAttribute("error", "Error al realizar la escritura sobre el fichero XLS");
+						} else {
+							despachar = "TratamientoFich.jsp";
+						}
+						break;
+					case "YAML":
 
-					if (!estado) {
-						despachar = "";
-						request.setAttribute("error", "Error al realizar la escritura sobre el fichero XLS");
+						break;
+					case "JSON":
+
+						break;
+					case "XML":
+
+						break;
 					}
+				} catch (Exception e) {
+					String error = e.getMessage();
+					request.setAttribute("error", error);
+					despachar = "Error.jsp";
 				}
-
-				break;
-			case "YAML":
-
-				break;
-			case "JSON":
-
-				break;
-			case "XML":
-
-				break;
 			}
 			break;
 		}
