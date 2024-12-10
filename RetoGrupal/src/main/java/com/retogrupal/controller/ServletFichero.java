@@ -123,23 +123,64 @@ public class ServletFichero extends HttpServlet {
 			despachar = "AccesoDatosA.jsp";
 			break;
 		case "escritura":
-			switch (fichero) {
-			case "CSV": 
-				
-				break;
-			case "XLS":
-				
-				break;
-			case "YAML":
-				
-				break;
-			case "JSON":
-				
-				break;
-			case "XML":
-				
-				break;
+			String fecha = request.getParameter("dato1");
+			String tipoResiduo = request.getParameter("dato2");
+			String modalidad = request.getParameter("dato3");
+			String cantidad = "\""+request.getParameter("dato4")+"\"";
+
+			if (fecha.isBlank() || tipoResiduo.isBlank() || modalidad.isBlank() || cantidad.isBlank()) {
+				String error = "";
+				if (fecha.isBlank()) {
+					error += "No se ha introducido Dato 1\n";
+				}
+				if (tipoResiduo.isBlank()) {
+					error += "No se ha introducido Dato 2\n";
+				}
+				if (modalidad.isBlank()) {
+					error += "No se ha introducido Dato 3\n";
+				}
+				if (cantidad.isBlank()) {
+					error += "No se ha introducido Dato 4\n";
+				}
+				despachar = "Error.jsp";
+
+			} else {
+				try {
+					
+					switch (fichero) {
+					case "CSV":
+						String path=getServletContext()
+								.getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.csv");
+						System.out.println(path);
+						
+						CSVWriter writer=new CSVWriter(new FileWriter(path,true));
+						
+						String [] datos= {(fecha+"T00:00,"+tipoResiduo+","+modalidad+","+cantidad)};
+						writer.writeNext(datos);
+						writer.close();
+						despachar = "TratamientoFich.jsp";
+						
+						break;
+					case "XLS":
+
+						break;
+					case "YAML":
+
+						break;
+					case "JSON":
+
+						break;
+					case "XML":
+
+						break;
+					}
+				} catch (Exception e) {
+					String error = e.getMessage();
+					request.setAttribute("error", error);
+					despachar = "Error.jsp";
+				}
 			}
+
 			break;
 		}
 
