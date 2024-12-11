@@ -118,7 +118,7 @@ public class ServletFichero extends HttpServlet {
 				break;
 			case "XLS":
 				RepresentacionTabla tabla = UtilidadesXLS
-						.leer(getServletContext().getRealPath("recogida-de-residuos-desde-2013.xls"));
+						.leer(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.xls"));
 				if (tabla != null) {
 					request.setAttribute("encabezado", tabla.getEncabezado());
 					residuos = tabla.getCuerpo();
@@ -132,7 +132,7 @@ public class ServletFichero extends HttpServlet {
 				break;
 			case "XML":
 				try {
-					residuos = UtilidadXML.LeerXML(getServletContext().getRealPath("recogida-de-residuos-desde-2013.xml"));
+					residuos = UtilidadXML.LeerXML(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.xml"));
 					request.setAttribute("encabezado", UtilidadXML.CargarEncabezados());
 				} catch (ParserConfigurationException | SAXException | IOException e) {
 					// TODO Auto-generated catch block
@@ -185,10 +185,8 @@ public class ServletFichero extends HttpServlet {
 
 						break;
 					case "XLS":
-						boolean estado;
-
-						estado = UtilidadesXLS.escribir(
-								getServletContext().getRealPath("recogida-de-residuos-desde-2013.xls"),
+						boolean estado = UtilidadesXLS.escribir(
+								getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.xls"),
 								new Residuo(LocalDate.parse(fecha, DateTimeFormatter.ofPattern("yyyy-MM-dd")),
 										tipoResiduo, modalidad, Double.parseDouble(cantidad)));
 						if (!estado) {
@@ -209,7 +207,7 @@ public class ServletFichero extends HttpServlet {
 									LocalDate.parse(fecha,DateTimeFormatter.ofPattern("yyyy-MM-dd")),
 									tipoResiduo , modalidad,  
 									Double.parseDouble(cantidad));
-							UtilidadXML.EscribirXML(getServletContext().getRealPath("recogida-de-residuos-desde-2013.xml"), r);
+							UtilidadXML.EscribirXML(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.xml"), r);
 							despachar = "TratamientoFich.jsp";
 						} catch (ParserConfigurationException | SAXException | IOException
 								| TransformerFactoryConfigurationError | TransformerException e) {
