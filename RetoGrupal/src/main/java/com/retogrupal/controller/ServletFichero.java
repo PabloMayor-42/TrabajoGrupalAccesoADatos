@@ -58,7 +58,8 @@ public class ServletFichero extends HttpServlet {
 		String fichero = request.getParameter("fichero");
 
 		// Segun sea Leer o escribir se hara una cosa u otra
-		switch (request.getParameter("accion")) {
+		switch (request.getAttribute("accion") != null ? (String) request.getAttribute("accion")
+				: request.getParameter("accion")) {
 		case "lectura":
 			// Leemos el tipo de fichero seleccionado
 			ArrayList<Residuo> residuos = new ArrayList();
@@ -228,14 +229,23 @@ public class ServletFichero extends HttpServlet {
 					case "CSV":
 						String path = getServletContext()
 								.getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.csv");
-						System.out.println(path);
 
-						CSVWriter writer = new CSVWriter(new FileWriter(path, true));
+						try {
+							CSVWriter writer = new CSVWriter(new FileWriter(path, true));
 
-						String[] datos = { (fecha + "T00:00") , tipoResiduo , modalidad  , cantidad + "" };
-						writer.writeNext(datos);
-						writer.close();
-						despachar = "TratamientoFich.jsp";
+							String[] datos = { (fecha + "T00:00"), tipoResiduo, modalidad, cantidad + "" };
+							writer.writeNext(datos);
+
+							writer.close();
+
+							// Cargar lectura
+							request.setAttribute("accion", "lectura");
+							doPost(request, response);
+							return; // Evitar despachar 2 veces
+						} catch (Exception e) {
+							e.printStackTrace();
+							request.setAttribute("error", "Error al realizar la escritura sobre el fichero ODS");
+						}
 
 						break;
 					case "XLS":
@@ -246,7 +256,10 @@ public class ServletFichero extends HttpServlet {
 						if (!estadoXLS) {
 							request.setAttribute("error", "Error al realizar la escritura sobre el fichero XLS");
 						} else {
-							despachar = "TratamientoFich.jsp";
+							// Cargar lectura
+							request.setAttribute("accion", "lectura");
+							doPost(request, response);
+							return; // Evitar despachar 2 veces
 						}
 						break;
 					case "ODS":
@@ -278,7 +291,10 @@ public class ServletFichero extends HttpServlet {
 							// Guardar los cambios en el mismo archivo
 							document.save(f);
 
-							despachar = "TratamientoFich.jsp";
+							// Cargar lectura
+							request.setAttribute("accion", "lectura");
+							doPost(request, response);
+							return; // Evitar despachar 2 veces
 						} catch (Exception e) {
 							e.printStackTrace();
 							request.setAttribute("error", "Error al realizar la escritura sobre el fichero ODS");
@@ -300,7 +316,10 @@ public class ServletFichero extends HttpServlet {
 						if (!estadoJSON) {
 							request.setAttribute("error", "Error al realizar la escritura sobre el fichero JSON");
 						} else {
-							despachar = "TratamientoFich.jsp";
+							// Cargar lectura
+							request.setAttribute("accion", "lectura");
+							doPost(request, response);
+							return; // Evitar despachar 2 veces
 						}
 						break;
 					case "XML":
@@ -309,7 +328,11 @@ public class ServletFichero extends HttpServlet {
 									tipoResiduo, modalidad, Double.parseDouble(cantidad));
 							UtilidadesXML.EscribirXML(getServletContext()
 									.getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.xml"), r);
-							despachar = "TratamientoFich.jsp";
+
+							// Cargar lectura
+							request.setAttribute("accion", "lectura");
+							doPost(request, response);
+							return; // Evitar despachar 2 veces
 						} catch (ParserConfigurationException | SAXException | IOException
 								| TransformerFactoryConfigurationError | TransformerException e) {
 							// TODO Auto-generated catch block
