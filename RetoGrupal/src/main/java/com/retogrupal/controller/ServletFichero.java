@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -40,6 +41,10 @@ public class ServletFichero extends HttpServlet {
 		// TODO Auto-generated constructor stub
 	}
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+		
+	}
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
@@ -205,7 +210,7 @@ public class ServletFichero extends HttpServlet {
 						CSVWriter writer = new CSVWriter(new FileWriter(path, true));
 
 						String[] datos = {
-								(fecha + "T00:00," + tipoResiduo + "," + modalidad + ",\"" + cantidad + "\"") };
+								(fecha + "T00:00," + tipoResiduo + "," + modalidad + ",\"" + cantidad.replace(".", ",") + "\"") };
 						writer.writeNext(datos);
 						writer.close();
 						despachar = "TratamientoFich.jsp";
@@ -220,6 +225,7 @@ public class ServletFichero extends HttpServlet {
 								getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.ods"));
 						try {
 							OdfSpreadsheetDocument document = OdfSpreadsheetDocument.loadDocument(f);
+							
 
 							// Obtener la primera hoja por índice
 							OdfTable hoja = document.getSpreadsheetTables().get(0);
@@ -235,17 +241,30 @@ public class ServletFichero extends HttpServlet {
 								
 							}
 							
+							//Pruebas
 							System.out.println(hoja.getCellByPosition(0, nextFila).getStringValue() + "           Muestra algo");
 							System.out.println(hoja.getCellByPosition(1, nextFila - 1).getStringValue());
 							System.out.println(hoja.getCellByPosition(2, nextFila - 1).getStringValue());
 							System.out.println(hoja.getCellByPosition(3, nextFila).getStringValue());
 
+							//Formatear fecha a calendar
+							SimpleDateFormat fr=new SimpleDateFormat("yyyy-MM-dd");
 							
+							java.util.Date utilDate=fr.parse(fecha);
+							Date fch= new Date(utilDate.getTime());
+							
+							Calendar cal=Calendar.getInstance();
+							cal.setTime(fch);
+														
 							 // Agregar más datos en la siguiente fila 
-							 hoja.getCellByPosition(0, nextFila-1).setDateValue();
+							 //Demomeno solo sobreescribe la ultima fila
+							 hoja.getCellByPosition(0, nextFila-1).setDateValue(cal);
 							 hoja.getCellByPosition(1, nextFila-1).setStringValue(tipoResiduo);
 							 hoja.getCellByPosition(2, nextFila-1).setStringValue(modalidad);
 							 hoja.getCellByPosition(3, nextFila-1).setDoubleValue(Double.parseDouble(cantidad.replace(",", ".")));
+							 
+							 //OdfTableRow fila= tbale.appendRow();
+							 //System.out.println(fila.getRowIndex()); 
 
 							 // Guardar los cambios en el mismo archivo 
 							 document.save(f);
