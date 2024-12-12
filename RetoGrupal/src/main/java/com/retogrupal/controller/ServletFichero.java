@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -120,7 +121,7 @@ public class ServletFichero extends HttpServlet {
 				////
 				
 				//PREGUNTAR POR LAS RUTAS
-				String json ="C:\\Users\\altalopa\\git\\TrabajoGrupalAccesoADatos\\RetoGrupal\\src\\main\\resources\\recogida-de-residuos-desde-2013.json";
+				String json =getServletContext().getRealPath("/recogida-de-residuos-desde-2013.json");
 				
 				System.out.println("Ruta completa del archivo JSON: " + json);
 
@@ -128,7 +129,9 @@ public class ServletFichero extends HttpServlet {
 				
 				try {
 			          FileReader fr = new FileReader(json);
-
+			          ArrayList<String> cabeceras = new ArrayList<>();
+				         
+			          /*
 			          //Leer el archivo Json con Gson para trabnajar con la librera
 			          Gson gson = new Gson();
 			          //convierte el contenido del archivo Json a un JsonArray
@@ -140,8 +143,8 @@ public class ServletFichero extends HttpServlet {
 			              return;
 			          }
 
-			          ArrayList<String> cabeceras = new ArrayList<>();
-
+			          
+			          
                         //Recoge las cabeceras del primer objeto Json
                         JsonObject primerObj = jsonArray.get(0).getAsJsonObject();
                         
@@ -149,24 +152,38 @@ public class ServletFichero extends HttpServlet {
                             
                         	cabeceras.add(temp);
                             
-                        }
+                        }*/
 
+                        for (Residuo res : new Gson().fromJson(fr, Residuo[].class)) {
+                        	residuos.add(res);
+                        }
+                    
+                        /*
+                        
                         // Recoger el contenido
                         for (i = 0; i < jsonArray.size(); i++) {
                         	
                             JsonObject fila = jsonArray.get(i).getAsJsonObject();
                             
                             LocalDate fecha = LocalDateTime.parse(fila.get("Mes").getAsString(), frmt).toLocalDate();
-                            String residuo = fila.get("Residuo").getAsString();
-                            String modalidad = fila.get("Modalidad").getAsString();
-                            Double cantidad = fila.get("Cantidad").getAsDouble();
-
+                            String residuo = (String) fila.get("Residuo").getAsString();
+                            String modalidad = (String) fila.get("Modalidad").getAsString();
+                            String cantidad = (String) fila.get("Cantidad").getAsString();
+                            
+                            System.out.println(fecha);
+                            
+                            //lee todo bn pero a la hora de hacer el res me lo coge de null 
                             //crear el objeto Residuo y agrearlo a la lista
+                            
+                            
                             Residuo res = new Residuo(fecha, residuo, modalidad, cantidad);
                             residuos.add(res);
                         }
-
+                        */
+                        
+                        
 						//enviiaar los datos
+                  
                         request.setAttribute("encabezado", cabeceras);
                         request.setAttribute("residuos", residuos);
                         request.getRequestDispatcher("AccesoDatosA.jsp").forward(request, response);
@@ -205,7 +222,6 @@ public class ServletFichero extends HttpServlet {
 				String error = "";
 				if (fecha.isBlank()) {
 					error += "No se ha introducido Dato 1\n";
-					System.out.println("Vacio");
 				}
 				if (tipoResiduo.isBlank()) {
 					error += "No se ha introducido Dato 2\n";
@@ -269,7 +285,6 @@ public class ServletFichero extends HttpServlet {
 
 		System.out.println(despachar);
 		request.getRequestDispatcher(despachar).forward(request, response);
-		
 	}catch (Exception e) {
 		// TODO: handle exception
 	}

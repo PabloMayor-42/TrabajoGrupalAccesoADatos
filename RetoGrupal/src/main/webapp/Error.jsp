@@ -10,5 +10,8 @@
 <body style="text-align:center;">
 <hr>
 <h1 style="color: red;"><%=request.getAttribute("error") != null? (String)request.getAttribute("error") : "Error aleatorio" %></h1>
+
+	<%System.out.print(request.getParameter("error")); %>
+
 </body>
 </html>

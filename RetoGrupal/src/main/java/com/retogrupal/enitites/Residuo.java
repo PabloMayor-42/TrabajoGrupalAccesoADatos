@@ -8,6 +8,7 @@ public class Residuo {
 	private String residuo;
 	private String modalidad;
 	private Double cantidad;
+	private String cantidad2;
 	
 	public Residuo(LocalDate mes, String residuo, String modalidad, Double cantidad) {
 		super();
@@ -23,7 +24,7 @@ public class Residuo {
 		this.mes = mes;
 		this.residuo = residuo;
 		this.modalidad = modalidad;
-		this.cantidad = cantidad;
+		this.cantidad2 = cantidad2;
 	}
 
 	public LocalDate getMes() {
@@ -49,6 +50,20 @@ public class Residuo {
 	}
 	public void setCantidad(Double cantidad) {
 		this.cantidad = cantidad;
+	}
+
+	public String getCantidad2() {
+		return cantidad2;
+	}
+
+	public void setCantidad2(String cantidad2) {
+		this.cantidad2 = cantidad2;
+	}
+
+	@Override
+	public String toString() {
+		return "Residuo [mes=" + mes + ", residuo=" + residuo + ", modalidad=" + modalidad + ", cantidad=" + cantidad
+				+ "]";
 	}
 	
 	
