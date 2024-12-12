@@ -4,6 +4,8 @@ public class EjemploODS {
 
 	public static void main(String[] args) {
 		
+		ArrayList<String> datosTotales = new ArrayList<String>();
+		
 		/*
 		ArrayList<String> encabezados = new ArrayList<String>();
 		ArrayList<String> datosColumna = new ArrayList<String>();
@@ -19,5 +21,11 @@ public class EjemploODS {
 		*/
 		
 		ODSWritter.Escritor();
+		
+		//datosTotales.addAll(ODSReader.datosTotales("C:\\Users\\maytompa\\Documents\\GitHub\\TrabajoGrupalAccesoADatos\\RetoGrupal\\src\\test\\resources\\example.ods"));
+		
+		//for (String string : datosTotales) {
+		//	System.out.println(string);
+		//}
 	}
 }

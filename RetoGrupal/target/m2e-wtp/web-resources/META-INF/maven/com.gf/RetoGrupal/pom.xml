@@ -20,11 +20,13 @@
   </properties>
   
   <repositories>
+  
    <repository>
       <id>repository.groupdocs.com</id>
       <name>GroupDocs Repository</name>
       <url>https://releases.groupdocs.com/java/repo/</url>
    </repository>
+
 </repositories>
 
   <dependencies>
@@ -52,7 +54,13 @@
       <artifactId>groupdocs-editor</artifactId>
       <version>24.9</version>
    </dependency>
+   
+     
+    <!-- Dependencia ODS-->
     
+    
+
+	
   </dependencies>
 
 	
