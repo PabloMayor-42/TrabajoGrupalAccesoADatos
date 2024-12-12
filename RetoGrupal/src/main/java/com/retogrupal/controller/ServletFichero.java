@@ -20,6 +20,10 @@ import java.util.Calendar;
 
 import org.odftoolkit.odfdom.doc.OdfSpreadsheetDocument;
 import org.odftoolkit.odfdom.doc.table.OdfTable;
+import org.odftoolkit.odfdom.doc.table.OdfTableCell;
+import org.odftoolkit.odfdom.doc.table.OdfTableRow;
+import org.odftoolkit.odfdom.dom.element.table.TableTableElement;
+import org.odftoolkit.odfdom.dom.element.table.TableTableRowElement;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
@@ -226,27 +230,21 @@ public class ServletFichero extends HttpServlet {
 						try {
 							OdfSpreadsheetDocument document = OdfSpreadsheetDocument.loadDocument(f);
 							
+							
 
 							// Obtener la primera hoja por índice
 							OdfTable hoja = document.getSpreadsheetTables().get(0);
-
-							int nextFila=0;
+							
+							int nextFila=1;
 							
 							for (int row = 1; row < hoja.getRowCount(); row++) {
-								String dato= hoja.getCellByPosition(0, row).getStringValue();
-								nextFila++;
-								if(dato== null || dato.isEmpty()) {
-									row=hoja.getRowCount();
-								}
-								
+							    String dato = hoja.getCellByPosition(0, row).getStringValue();
+							    if (dato == null || dato.isEmpty()) {
+							        nextFila = row;
+							        break; // Sale del bucle una vez encontrada la fila vacía
+							    }
 							}
 							
-							//Pruebas
-							System.out.println(hoja.getCellByPosition(0, nextFila).getStringValue() + "           Muestra algo");
-							System.out.println(hoja.getCellByPosition(1, nextFila - 1).getStringValue());
-							System.out.println(hoja.getCellByPosition(2, nextFila - 1).getStringValue());
-							System.out.println(hoja.getCellByPosition(3, nextFila).getStringValue());
-
 							//Formatear fecha a calendar
 							SimpleDateFormat fr=new SimpleDateFormat("yyyy-MM-dd");
 							
@@ -256,12 +254,12 @@ public class ServletFichero extends HttpServlet {
 							Calendar cal=Calendar.getInstance();
 							cal.setTime(fch);
 														
-							 // Agregar más datos en la siguiente fila 
-							 //Demomeno solo sobreescribe la ultima fila
-							 hoja.getCellByPosition(0, nextFila-1).setDateValue(cal);
-							 hoja.getCellByPosition(1, nextFila-1).setStringValue(tipoResiduo);
-							 hoja.getCellByPosition(2, nextFila-1).setStringValue(modalidad);
-							 hoja.getCellByPosition(3, nextFila-1).setDoubleValue(Double.parseDouble(cantidad.replace(",", ".")));
+							 //Escribir en la siguiente fila
+							 hoja.getCellByPosition(0, nextFila).setDateValue(cal);
+							 hoja.getCellByPosition(1, nextFila).setStringValue(tipoResiduo);
+							 hoja.getCellByPosition(2, nextFila).setStringValue(modalidad);
+							 hoja.getCellByPosition(3, nextFila).setDoubleValue(Double.parseDouble(cantidad.replace(",", ".")));
+							 
 							 
 							 //OdfTableRow fila= tbale.appendRow();
 							 //System.out.println(fila.getRowIndex()); 
