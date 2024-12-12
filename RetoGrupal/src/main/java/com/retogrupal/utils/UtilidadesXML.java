@@ -25,7 +25,7 @@ import org.xml.sax.SAXException;
 
 import com.retogrupal.enitites.Residuo;
 
-public class UtilidadXML {
+public class UtilidadesXML {
 
 	public static ArrayList<Residuo> LeerXML(String ruta) throws ParserConfigurationException, SAXException, IOException {
 		ArrayList<Residuo> residuos = new ArrayList<Residuo>();

@@ -13,25 +13,20 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-
-import javax.swing.JFileChooser;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactoryConfigurationError;
 
-import org.eclipse.jdt.internal.compiler.ast.ThisReference;
+import org.odftoolkit.simple.SpreadsheetDocument;
+import org.odftoolkit.simple.table.Table;
 import org.xml.sax.SAXException;
-
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
 import com.retogrupal.enitites.Residuo;
 import com.retogrupal.utils.RepresentacionTabla;
-import com.retogrupal.utils.UtilidadXML;
+import com.retogrupal.utils.UtilidadesXML;
 import com.retogrupal.utils.UtilidadesJSON;
 import com.retogrupal.utils.UtilidadesXLS;
 
@@ -126,7 +121,59 @@ public class ServletFichero extends HttpServlet {
 				}
 				break;
 			case "ODS":
+				File f = new File(
+						getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.ods"));
+				SpreadsheetDocument document =null;
+				try {
+					document = SpreadsheetDocument.loadDocument(f);
+					Table hoja = document.getSheetByIndex(0);
 
+					// Leemos el encabezado
+					String fechaEnc = hoja.getCellByPosition(0, 0).getStringValue();
+					String tipoResiduoEnc = hoja.getCellByPosition(1, 0).getStringValue();
+					String modalidadEnc = hoja.getCellByPosition(2, 0).getStringValue();
+					String cantidadEnc = hoja.getCellByPosition(3, 0).getStringValue();
+
+					ArrayList<String> encabezado = new ArrayList<>();
+					encabezado.add(fechaEnc);
+					encabezado.add(tipoResiduoEnc);
+					encabezado.add(modalidadEnc);
+					encabezado.add(cantidadEnc);
+
+					request.setAttribute("encabezado", encabezado);
+					
+					DateTimeFormatter frmt2 = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+					
+					for (int row = 1; row < hoja.getRowCount(); row++) {
+						String fechaStr = hoja.getCellByPosition(0, row).getStringValue();
+				        if (fechaStr == null || fechaStr.isEmpty()) break;
+				        
+				        LocalDate fecha = LocalDateTime.parse(fechaStr, frmt2).toLocalDate();
+						String tipoResiduo = hoja.getCellByPosition(1, row).getStringValue();
+						String modalidad = hoja.getCellByPosition(2, row).getStringValue();
+						Double cantidad = Double
+								.parseDouble(hoja.getCellByPosition(3, row).getStringValue().replace(",", "."));
+
+						// Creamos un nuevo Residuo
+						Residuo dato = new Residuo(fecha, tipoResiduo, modalidad, cantidad);
+						// Añadimos el residuo a la lista
+						residuos.add(dato);
+					}
+					
+					
+
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}finally {
+				    if (document != null) {
+				        try {
+				            document.close();
+				        } catch (Exception e) {
+				            e.printStackTrace();
+				        }
+				    }
+				}
 				break;
 			case "JSON":
 				RepresentacionTabla tablaJSON = UtilidadesJSON.leer(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.json"));
@@ -137,8 +184,8 @@ public class ServletFichero extends HttpServlet {
 				break;
 			case "XML":
 				try {
-					residuos = UtilidadXML.LeerXML(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.xml"));
-					request.setAttribute("encabezado", UtilidadXML.CargarEncabezados());
+					residuos = UtilidadesXML.LeerXML(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.xml"));
+					request.setAttribute("encabezado", UtilidadesXML.CargarEncabezados());
 				} catch (ParserConfigurationException | SAXException | IOException e) {
 					// TODO Auto-generated catch block
 					request.setAttribute("error", e.getMessage());
@@ -159,17 +206,19 @@ public class ServletFichero extends HttpServlet {
 			if (fecha.isBlank() || tipoResiduo.isBlank() || modalidad.isBlank() || cantidad.isBlank()) {
 				String error = "";
 				if (fecha.isBlank()) {
-					error += "No se ha introducido Dato 1\n";
+					error += "No se ha introducido 'Fecha'<br>";
 				}
 				if (tipoResiduo.isBlank()) {
-					error += "No se ha introducido Dato 2\n";
+					error += "No se ha introducido 'Residuo'<br>";
 				}
 				if (modalidad.isBlank()) {
-					error += "No se ha introducido Dato 3\n";
+					error += "No se ha introducido 'Modalidad'<br>";
 				}
 				if (cantidad.isBlank()) {
-					error += "No se ha introducido Dato 4\n";
+					error += "No se ha introducido 'Cantidad'";
 				}
+				
+				request.setAttribute("error", error);
 				despachar = "Error.jsp";
 
 			} else {
@@ -201,7 +250,45 @@ public class ServletFichero extends HttpServlet {
 						}
 						break;
 					case "ODS":
+						File f = new File(
+								getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.ods"));
+						SpreadsheetDocument document =null;
+						try {
+							document = SpreadsheetDocument.loadDocument(f);
+							// Obtener la primera hoja por índice
+							Table hoja = document.getSheetByIndex(0);
+							
+							int nextFila=1;
+							
+							for (int row = 1; row < hoja.getRowCount(); row++) {
+							    String dato = hoja.getCellByPosition(0, row).getStringValue();
+							    if (dato == null || dato.isEmpty()) {
+							        nextFila = row;
+							        break; // Sale del bucle una vez encontrada la fila vacía
+							    }
+							}
+							
+							 //Escribir en la siguiente fila
+							 hoja.getCellByPosition(0, nextFila).setStringValue(fecha + "T00:00");
+							 hoja.getCellByPosition(1, nextFila).setStringValue(tipoResiduo);
+							 hoja.getCellByPosition(2, nextFila).setStringValue(modalidad);
+							 hoja.getCellByPosition(3, nextFila).setDoubleValue(Double.parseDouble(cantidad.replace(",", "."))); 
 
+							 // Guardar los cambios en el mismo archivo 
+							 document.save(f);
+							 
+							despachar = "TratamientoFich.jsp";
+						} catch (Exception e) {
+						    e.printStackTrace();
+						} finally {
+						    if (document != null) {
+						        try {
+						            document.close();
+						        } catch (Exception e) {
+						            e.printStackTrace();
+						        }
+						    }
+						}
 						break;
 					case "JSON":
 						boolean estadoJSON = UtilidadesJSON.escribir(
@@ -220,7 +307,7 @@ public class ServletFichero extends HttpServlet {
 									LocalDate.parse(fecha,DateTimeFormatter.ofPattern("yyyy-MM-dd")),
 									tipoResiduo , modalidad,  
 									Double.parseDouble(cantidad));
-							UtilidadXML.EscribirXML(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.xml"), r);
+							UtilidadesXML.EscribirXML(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.xml"), r);
 							despachar = "TratamientoFich.jsp";
 						} catch (ParserConfigurationException | SAXException | IOException
 								| TransformerFactoryConfigurationError | TransformerException e) {
@@ -241,6 +328,8 @@ public class ServletFichero extends HttpServlet {
 		if (despachar == null) {
 			despachar = "Error.jsp";
 		}
+		
+		
 
 		request.getRequestDispatcher(despachar).forward(request, response);
 	}
