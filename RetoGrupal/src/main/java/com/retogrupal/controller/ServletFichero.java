@@ -118,26 +118,21 @@ public class ServletFichero extends HttpServlet {
 				reader.close();
 				break;
 			case "XLS":
-				RepresentacionTabla tabla = UtilidadesXLS
+				RepresentacionTabla tablaXLS = UtilidadesXLS
 						.leer(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.xls"));
-				if (tabla != null) {
-					request.setAttribute("encabezado", tabla.getEncabezado());
-					residuos = tabla.getCuerpo();
+				if (tablaXLS != null) {
+					request.setAttribute("encabezado", tablaXLS.getEncabezado());
+					residuos = tablaXLS.getCuerpo();
 				}
 				break;
 			case "ODS":
 
 				break;
 			case "JSON":
-				RepresentacionTabla tablaJ = UtilidadesJSON.leer(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.json"));
-				ArrayList<String> a = new ArrayList<>();
-				a.add("a");
-				a.add("a");
-				a.add("a");
-				a.add("a");
-				if (tablaJ != null) {
-					request.setAttribute("encabezado", a);
-					residuos = tablaJ.getCuerpo();
+				RepresentacionTabla tablaJSON = UtilidadesJSON.leer(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.json"));
+				if (tablaJSON != null) {
+					request.setAttribute("encabezado", tablaJSON.getEncabezado());
+					residuos = tablaJSON.getCuerpo();
 				}
 				break;
 			case "XML":

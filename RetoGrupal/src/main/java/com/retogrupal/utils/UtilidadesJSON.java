@@ -1,5 +1,6 @@
 package com.retogrupal.utils;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -9,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.retogrupal.enitites.Residuo;
 
 public class UtilidadesJSON {
@@ -17,8 +19,23 @@ public class UtilidadesJSON {
 	public static RepresentacionTabla leer(String archivo) {
 		RepresentacionTabla datosJSON = new RepresentacionTabla(new ArrayList<String>(),new ArrayList<Residuo>());
 		
-		try(FileReader fr = new FileReader(archivo)){
-			for(ResiduosAdapter adapter : new Gson().fromJson(fr, ResiduosAdapter[].class))
+		try(BufferedReader fr = new BufferedReader(new FileReader(archivo))){
+			
+			StringBuilder jsonBuffer = new StringBuilder();
+			String line;
+			while((line = fr.readLine()) != null) {
+				jsonBuffer.append(line);
+			}
+			
+			
+			for (String cabecera : new Gson()
+					.fromJson(jsonBuffer.toString(), JsonArray.class)
+					.get(0).getAsJsonObject()
+					.keySet())
+				datosJSON.getEncabezado().add(cabecera);
+			
+			
+			for(ResiduosAdapter adapter : new Gson().fromJson(jsonBuffer.toString(), ResiduosAdapter[].class))
 				datosJSON.getCuerpo().add(new Residuo(
 						LocalDate.parse(adapter.Mes(),DateTimeFormatter.ISO_LOCAL_DATE_TIME),
 						adapter.Residuo(),
