@@ -28,6 +28,8 @@ import org.odftoolkit.odfdom.dom.element.table.TableTableElement;
 import org.odftoolkit.odfdom.dom.element.table.TableTableRowElement;
 import org.odftoolkit.odfdom.incubator.meta.OdfMetaDocumentStatistic;
 import org.odftoolkit.odfdom.pkg.manifest.OdfFileEntry;
+import org.odftoolkit.simple.SpreadsheetDocument;
+import org.odftoolkit.simple.table.Table;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
@@ -129,8 +131,10 @@ public class ServletFichero extends HttpServlet {
 
 				File f = new File(
 						getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.ods"));
-				try (OdfSpreadsheetDocument document = OdfSpreadsheetDocument.loadDocument(f)) {
-					OdfTable hoja = document.getSpreadsheetTables().get(0);
+				SpreadsheetDocument document =null;
+				try {
+					document = SpreadsheetDocument.loadDocument(f);
+					Table hoja = document.getSheetByIndex(0);
 
 					// Leemos el encabezado
 					String fechaEnc = hoja.getCellByPosition(0, 0).getStringValue();
@@ -147,14 +151,14 @@ public class ServletFichero extends HttpServlet {
 					System.out.println(encabezado);
 
 					getServletContext().setAttribute("encabezado", encabezado);
-
-					// Leer datos
+					
+					DateTimeFormatter frmt2 = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+					
 					for (int row = 1; row < hoja.getRowCount(); row++) {
-			
-						// Accede a los valores individuales
-						DateTimeFormatter frmt2 = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-						LocalDate fecha = LocalDateTime.parse(hoja.getCellByPosition(0, row).getStringValue(), frmt2)
-								.toLocalDate();
+						String fechaStr = hoja.getCellByPosition(0, row).getStringValue();
+				        if (fechaStr == null || fechaStr.isEmpty()) break;
+				        
+				        LocalDate fecha = LocalDateTime.parse(fechaStr, frmt2).toLocalDate();
 						String tipoResiduo = hoja.getCellByPosition(1, row).getStringValue();
 						String modalidad = hoja.getCellByPosition(2, row).getStringValue();
 						Double cantidad = Double
@@ -169,8 +173,15 @@ public class ServletFichero extends HttpServlet {
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
+				}finally {
+				    if (document != null) {
+				        try {
+				            document.close();
+				        } catch (Exception e) {
+				            e.printStackTrace();
+				        }
+				    }
 				}
-
 				break;
 			case "JSON":
 
@@ -231,12 +242,11 @@ public class ServletFichero extends HttpServlet {
 
 						File f = new File(
 								getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.ods"));
+						SpreadsheetDocument document =null;
 						try {
-							OdfSpreadsheetDocument document = OdfSpreadsheetDocument.loadDocument(f);
-							
-
+							document = SpreadsheetDocument.loadDocument(f);
 							// Obtener la primera hoja por índice
-							OdfTable hoja = document.getSpreadsheetTables().get(0);
+							Table hoja = document.getSheetByIndex(0);
 							
 							int nextFila=1;
 							
@@ -248,24 +258,17 @@ public class ServletFichero extends HttpServlet {
 							    }
 							}
 							
-							//Formatear fecha a calendar
-							SimpleDateFormat fr=new SimpleDateFormat("yyyy-MM-dd");
-							
-							java.util.Date utilDate=fr.parse(fecha);
-							Date fch= new Date(utilDate.getTime());
-							
-							Calendar cal=Calendar.getInstance();
-							cal.setTime(fch);
+							SimpleDateFormat fr = new SimpleDateFormat("yyyy-MM-dd");
+						    java.util.Date utilDate = fr.parse(fecha);
+						    Date fch = new Date(utilDate.getTime());
+						    Calendar cal = Calendar.getInstance();
+						    cal.setTime(fch);
 							
 							 //Escribir en la siguiente fila
 							 hoja.getCellByPosition(0, nextFila).setDateValue(cal);
 							 hoja.getCellByPosition(1, nextFila).setStringValue(tipoResiduo);
 							 hoja.getCellByPosition(2, nextFila).setStringValue(modalidad);
-							 hoja.getCellByPosition(3, nextFila).setDoubleValue(Double.parseDouble(cantidad.replace(",", ".")));
-							 
-							 
-							 //OdfTableRow fila= tbale.appendRow();
-							 //System.out.println(fila.getRowIndex()); 
+							 hoja.getCellByPosition(3, nextFila).setDoubleValue(Double.parseDouble(cantidad.replace(",", "."))); 
 
 							 // Guardar los cambios en el mismo archivo 
 							 document.save(f);
@@ -273,10 +276,17 @@ public class ServletFichero extends HttpServlet {
 							 System.out.println("Archivo modificado exitosamente: " +
 							 f.getAbsolutePath());
 							 
-							document.close();
 							despachar = "TratamientoFich.jsp";
 						} catch (Exception e) {
-							e.printStackTrace();
+						    e.printStackTrace();
+						} finally {
+						    if (document != null) {
+						        try {
+						            document.close();
+						        } catch (Exception e) {
+						            e.printStackTrace();
+						        }
+						    }
 						}
 
 						break;

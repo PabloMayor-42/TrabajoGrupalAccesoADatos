@@ -22,7 +22,7 @@ ArrayList<Residuo> residuos=(ArrayList)getServletContext().getAttribute("residuo
 	</tr>
 	<%for(Residuo res:residuos){ %>
 		<tr>
-			<td><%=res.getMes() %></td>
+			<td><%=res.getMes()%></td>
 			<td><%=res.getResiduo() %></td>
 			<td><%=res.getModalidad() %></td>
 			<td><%=res.getCantidad() %></td>
