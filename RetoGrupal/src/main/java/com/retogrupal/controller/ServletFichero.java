@@ -18,12 +18,16 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import org.odftoolkit.odfdom.doc.OdfDocument;
 import org.odftoolkit.odfdom.doc.OdfSpreadsheetDocument;
 import org.odftoolkit.odfdom.doc.table.OdfTable;
 import org.odftoolkit.odfdom.doc.table.OdfTableCell;
 import org.odftoolkit.odfdom.doc.table.OdfTableRow;
+import org.odftoolkit.odfdom.dom.OdfDocumentNamespace;
 import org.odftoolkit.odfdom.dom.element.table.TableTableElement;
 import org.odftoolkit.odfdom.dom.element.table.TableTableRowElement;
+import org.odftoolkit.odfdom.incubator.meta.OdfMetaDocumentStatistic;
+import org.odftoolkit.odfdom.pkg.manifest.OdfFileEntry;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
@@ -230,7 +234,6 @@ public class ServletFichero extends HttpServlet {
 						try {
 							OdfSpreadsheetDocument document = OdfSpreadsheetDocument.loadDocument(f);
 							
-							
 
 							// Obtener la primera hoja por índice
 							OdfTable hoja = document.getSpreadsheetTables().get(0);
@@ -253,7 +256,7 @@ public class ServletFichero extends HttpServlet {
 							
 							Calendar cal=Calendar.getInstance();
 							cal.setTime(fch);
-														
+							
 							 //Escribir en la siguiente fila
 							 hoja.getCellByPosition(0, nextFila).setDateValue(cal);
 							 hoja.getCellByPosition(1, nextFila).setStringValue(tipoResiduo);
