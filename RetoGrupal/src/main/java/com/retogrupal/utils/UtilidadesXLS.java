@@ -46,7 +46,7 @@ public class UtilidadesXLS {
 				while (celdas.hasNext() && (i == hojaPrincipal.getFirstRowNum())) {
 					encabezado.add(celdas.next().getStringCellValue());
 				}
-
+				
 				if (i != hojaPrincipal.getFirstRowNum())
 					cuerpo.add(new Residuo(
 							row.getCell(0).getLocalDateTimeCellValue().toLocalDate(),
