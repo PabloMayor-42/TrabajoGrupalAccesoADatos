@@ -1,0 +1,5 @@
+Pablo mayor: YAML/RDF
+Pablo altes: JSON
+Aaron Rodrigo: XML
+Eduardo de la fuente: CSV
+Asier Sobrino: XLS
