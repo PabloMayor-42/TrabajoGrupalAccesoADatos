@@ -125,7 +125,7 @@ public class ServletFichero extends HttpServlet {
 					residuos = tabla.getCuerpo();
 				}
 				break;
-			case "YAML":
+			case "ODS":
 
 				break;
 			case "JSON":
@@ -205,7 +205,7 @@ public class ServletFichero extends HttpServlet {
 							despachar = "TratamientoFich.jsp";
 						}
 						break;
-					case "YAML":
+					case "ODS":
 
 						break;
 					case "JSON":
