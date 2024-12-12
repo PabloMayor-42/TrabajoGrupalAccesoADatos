@@ -32,6 +32,7 @@ import com.opencsv.exceptions.CsvValidationException;
 import com.retogrupal.enitites.Residuo;
 import com.retogrupal.utils.RepresentacionTabla;
 import com.retogrupal.utils.UtilidadXML;
+import com.retogrupal.utils.UtilidadesJSON;
 import com.retogrupal.utils.UtilidadesXLS;
 
 /**
@@ -128,7 +129,16 @@ public class ServletFichero extends HttpServlet {
 
 				break;
 			case "JSON":
-
+				RepresentacionTabla tablaJ = UtilidadesJSON.leer(getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.json"));
+				ArrayList<String> a = new ArrayList<>();
+				a.add("a");
+				a.add("a");
+				a.add("a");
+				a.add("a");
+				if (tablaJ != null) {
+					request.setAttribute("encabezado", a);
+					residuos = tablaJ.getCuerpo();
+				}
 				break;
 			case "XML":
 				try {
@@ -185,11 +195,11 @@ public class ServletFichero extends HttpServlet {
 
 						break;
 					case "XLS":
-						boolean estado = UtilidadesXLS.escribir(
+						boolean estadoXLS = UtilidadesXLS.escribir(
 								getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.xls"),
 								new Residuo(LocalDate.parse(fecha, DateTimeFormatter.ofPattern("yyyy-MM-dd")),
 										tipoResiduo, modalidad, Double.parseDouble(cantidad)));
-						if (!estado) {
+						if (!estadoXLS) {
 							request.setAttribute("error", "Error al realizar la escritura sobre el fichero XLS");
 						} else {
 							despachar = "TratamientoFich.jsp";
@@ -199,7 +209,15 @@ public class ServletFichero extends HttpServlet {
 
 						break;
 					case "JSON":
-
+						boolean estadoJSON = UtilidadesJSON.escribir(
+								getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.json"),
+								new Residuo(LocalDate.parse(fecha, DateTimeFormatter.ofPattern("yyyy-MM-dd")),
+										tipoResiduo, modalidad, Double.parseDouble(cantidad)));
+						if (!estadoJSON) {
+							request.setAttribute("error", "Error al realizar la escritura sobre el fichero JSON");
+						} else {
+							despachar = "TratamientoFich.jsp";
+						}
 						break;
 					case "XML":
 						try {
