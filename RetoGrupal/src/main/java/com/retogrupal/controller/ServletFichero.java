@@ -25,6 +25,7 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
 import com.retogrupal.enitites.Residuo;
+import com.retogrupal.utils.LecturaCSV;
 import com.retogrupal.utils.RepresentacionTabla;
 import com.retogrupal.utils.UtilidadesXML;
 import com.retogrupal.utils.UtilidadesJSON;
@@ -43,6 +44,10 @@ public class ServletFichero extends HttpServlet {
 	public ServletFichero() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
+
 	}
 
 	/**
@@ -65,53 +70,20 @@ public class ServletFichero extends HttpServlet {
 			ArrayList<Residuo> residuos = new ArrayList();
 			switch (fichero) {
 			case "CSV":
-				// Creamos un CSVReader para leer el fichero CSV
+
 				// Con getRealPath seleccionamos la ruta del fichero
-				CSVReader reader = new CSVReader(new FileReader(
-						getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.csv")));
-				String[] nextLine;
-				DateTimeFormatter frmt = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
-				int i = 0;
+				FileReader flrd = new FileReader(
+						getServletContext().getRealPath("WEB-INF/classes/recogida-de-residuos-desde-2013.csv"));
 				try {
-					// Leemos las lineas del csv individualmente
-					while ((nextLine = reader.readNext()) != null) {
-						if (i > 0) {
 
-							// Accede a los valores individuales
-							LocalDate fecha = LocalDateTime.parse(nextLine[0], frmt).toLocalDate();
-							String tipoResiduo = nextLine[1];
-							String modalidad = nextLine[2];
-							Double cantidad = Double.parseDouble(nextLine[3].replace(",", "."));
+					residuos = LecturaCSV.LeerDatos(flrd);
 
-							// Creamos un nuevo Residuo
-							Residuo dato = new Residuo(fecha, tipoResiduo, modalidad, cantidad);
-							// Añadimos el residuo a la lista
-							residuos.add(dato);
-
-						} else {
-							// La primera linea es el encabezado por lo que lo guardamos aparte
-							String fecha = nextLine[0];
-							String tipoResiduo = nextLine[1];
-							String modalidad = nextLine[2];
-							String cantidad = nextLine[3];
-
-							ArrayList<String> encabezado = new ArrayList<>();
-							encabezado.add(fecha);
-							encabezado.add(tipoResiduo);
-							encabezado.add(modalidad);
-							encabezado.add(cantidad);
-
-							request.setAttribute("encabezado", encabezado);
-
-						}
-						i++;
-					}
+					request.setAttribute("encabezado", LecturaCSV.EncabezadoCSV(flrd));
 
 				} catch (CsvValidationException | IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				reader.close();
 				break;
 			case "XLS":
 				RepresentacionTabla tablaXLS = UtilidadesXLS
@@ -244,7 +216,7 @@ public class ServletFichero extends HttpServlet {
 							return; // Evitar despachar 2 veces
 						} catch (Exception e) {
 							e.printStackTrace();
-							request.setAttribute("error", "Error al realizar la escritura sobre el fichero ODS");
+							request.setAttribute("error", "Error al realizar la escritura sobre el fichero CSV");
 						}
 
 						break;
